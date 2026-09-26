@@ -44,7 +44,7 @@ Edit your files, check the local preview, then commit and push to `main`. Once G
 
 ## Content and images
 
-This version is for nonsexual massage, skincare and personal grooming. It excludes the original escort content and its tracking tags. Team portraits are not copied; the page uses initials until you provide suitable staff photos.
+This version is for nonsexual massage, skincare and personal grooming. It excludes the original escort content and its tracking tags. Team portraits and galleries can be managed locally through the photo editor.
 
 The V Spa logo was retrieved from the business's public website. `public/images/spa-still-life.png` was generated with the built-in image-generation tool. It is decorative imagery, not a photograph of the premises. Prompt: premium realistic still life of folded ivory spa towels, an unlabeled amber massage oil bottle, dark stones, an orchid and candlelight on walnut; deep plum shadows, warm side light, objects on the right and negative space on the left; no people, text, logos or watermarks.
 
@@ -53,3 +53,24 @@ The V Spa logo was retrieved from the business's public website. `public/images/
     npm run build
 
 No environment variables or secrets are required for this version.
+
+## Change photos without editing React
+
+While `npm run dev` is running, open http://localhost:3000/manage-photos (or use the Manage photos button).
+
+1. Select the homepage banner, a service, or a team member.
+2. Choose images or drag them into the upload box. JPG, PNG, WebP and GIF are supported, up to 8 MB each.
+3. Enter a useful photo description and press Save photos.
+4. Team galleries accept up to 8 photos. Choose Add to gallery or Replace. Use as cover makes a photo the first image, also shown on the homepage.
+5. Return to the website or refresh the preview to see the change.
+
+Files are saved in `public/uploads/`; the chosen images are recorded in `app/photo-data.json`. Both belong to this repository, so your choices persist after restarting. Removing a photo from a page keeps the original file on disk. Nothing is uploaded to the internet by this editor.
+
+The photo editor and upload API are intentionally available only in local development. Production visitors cannot upload files. If you later want a private online dashboard, add authentication and durable image storage first.
+
+The team portraits in `public/images/team/` were copied from the business's public website at the owner's request. The banner and service images remain replaceable through the editor.
+
+## Original website URLs
+
+See URL-MIGRATION.md for the comparison against the original public website. The two restored top-level guides have their own app/mens-intimate-spa/page.jsx and app/toronto-adult-massage-guide/page.jsx entry files. Their article text is in app/original-guides.json. Their public URLs are unchanged, so redirects are unnecessary.
+

@@ -1,3 +1,5 @@
+import originalGuides from "./original-guides.json";
+import { SitePhoto, TeamGallery, FeaturedTeam } from "./photos";
 import { services, addons, team, guides, business, faq } from "./site-data";
 import { ServiceSpotlight, AppointmentPicker, HiringForm } from "./ui";
 export function SectionTitle({ eyebrow, title, text, link, label }) {
@@ -30,6 +32,13 @@ export function ServiceCards() {
     <div className="service-grid">
       {services.map((s, i) => (
         <article className="service-card" key={s.slug}>
+          <SitePhoto
+            className="service-card-photo"
+            slot={s.photoSlot}
+            fallback={s.image}
+            alt={s.alt}
+            loading="lazy"
+          />
           <div className="card-top">
             <span className="card-number">0{i + 1}</span>
             <span className="pill">{s.duration}</span>
@@ -110,11 +119,11 @@ export function CTA() {
     </section>
   );
 }
-export function GuideCards({ limit = guides.length }) {
+export function GuideCards({ limit = guides.length + originalGuides.length }) {
   return (
     <div className="guide-grid">
-      {guides.slice(0, limit).map((g, i) => (
-        <a className="guide-card" href={"/guides/" + g.slug} key={g.slug}>
+      {[...guides, ...originalGuides].slice(0, limit).map((g, i) => (
+        <a className="guide-card" href={g.path || "/guides/" + g.slug} key={g.slug}>
           <span className="eyebrow">THE SPA JOURNAL / 0{i + 1}</span>
           <h3>{g.title}</h3>
           <p>{g.summary}</p>
@@ -127,63 +136,63 @@ export function GuideCards({ limit = guides.length }) {
 export function Home() {
   return (
     <>
-      <section className="hero container">
-        <img
+      <section className="hero container original-hero">
+        <SitePhoto
           className="hero-photo"
-          src="/images/spa-still-life.png"
-          alt="Folded spa towels, massage oil and orchids in soft candlelight"
+          slot="hero"
+          alt="V Spa"
           fetchPriority="high"
         />
         <div className="hero-shade" />
-        <div className="hero-copy">
-          <span className="hero-kicker">
-            <span /> A QUIET CORNER OF MIDTOWN TORONTO
-          </span>
-          <h1>
-            Come in.
-            <br />
-            Breathe out.
-            <br />
-            <em>Be yourself again.</em>
-          </h1>
-          <p>
-            Thoughtful massage and body care.
-            <br />A private space to slow down, right here on Eglinton.
-          </p>
-          <div className="actions">
-            <a className="button" href="/schedule">
-              Reserve your escape <span aria-hidden="true">↗</span>
-            </a>
-            <a className="hero-link" href="/services">
-              Explore treatments
-            </a>
+        <div className="hero-original-grid">
+          <div className="hero-copy">
+            <span className="hero-location">
+              Toronto | Peaceful massage escape
+            </span>
+            <h1>Pure relaxation in Midtown Toronto</h1>
+            <h2>Attentive massage and body care in a calm, private setting.</h2>
+            <p>
+              Experience full-body relaxation and thoughtful care in private
+              suites. Choose your preferred massage, and settle into a quiet
+              moment on Eglinton.
+            </p>
+            <div className="actions">
+              <a className="button" href="/schedule">
+                Reserve a session
+              </a>
+              <a className="button secondary" href="/services">
+                View the service menu
+              </a>
+            </div>
           </div>
-        </div>
-        <div className="hero-foot">
-          <span>MASSAGE · SKINCARE · BODY CARE</span>
-          <span>
-            TORONTO, ON <span aria-hidden="true">↗</span>
-          </span>
+          <aside className="hero-stats">
+            <span className="eyebrow">V SPA TORONTO AT A GLANCE</span>
+            <div className="hero-stats-grid">
+              <div>
+                <strong>Our team</strong>
+                <span>Personal, attentive care</span>
+              </div>
+              <div>
+                <strong>4</strong>
+                <span>Private suites</span>
+              </div>
+              <div>
+                <strong>10 AM – 9 PM</strong>
+                <span>Open every day</span>
+              </div>
+              <div>
+                <strong>525 Eglinton Ave W</strong>
+                <span>Midtown Toronto</span>
+              </div>
+            </div>
+            <p>
+              Private suites. Thoughtful care.
+              <br />
+              Call or text to confirm your visit.
+            </p>
+          </aside>
         </div>
       </section>
-      <div className="container facts">
-        <div>
-          <span>YOUR OWN SPACE</span>
-          <strong>Private suites</strong>
-        </div>
-        <div>
-          <span>TIME FOR YOU</span>
-          <strong>30 · 45 · 60 min</strong>
-        </div>
-        <div>
-          <span>OPEN EVERY DAY</span>
-          <strong>10 AM – 9 PM</strong>
-        </div>
-        <a href="/contact">
-          <span>FIND US IN MIDTOWN</span>
-          <strong>525 Eglinton Ave W ↗</strong>
-        </a>
-      </div>
       <section className="section container">
         <SectionTitle
           eyebrow="The art of slowing down"
@@ -194,6 +203,16 @@ export function Home() {
         />
         <ServiceSpotlight />
         <ServiceCards />
+      </section>
+      <section className="section container featured-team-section">
+        <SectionTitle
+          eyebrow="Featured attendants"
+          title="Meet the people behind your visit."
+          text="Get to know our team and find the right fit for your next spa appointment."
+          link="/attendants"
+          label="View all attendants"
+        />
+        <FeaturedTeam />
       </section>
       <section className="experience-band">
         <div className="container experience-split">
@@ -451,10 +470,7 @@ export function Team() {
               className="team-card"
               key={t.name}
             >
-              <div className="team-monogram" aria-hidden="true">
-                {t.name[0]}
-                <span>V SPA</span>
-              </div>
+              <TeamGallery name={t.name} />
               <div>
                 <span className="eyebrow">SPA TEAM</span>
                 <h2>{t.name}</h2>
@@ -494,10 +510,7 @@ export function Experience() {
         text="A private Midtown retreat, with thoughtful details from your first welcome to your last moment of quiet."
       />
       <section className="container section compact experience-photo">
-        <img
-          src="/images/spa-still-life.png"
-          alt="Massage oil, soft towels and an orchid"
-        />
+        <SitePhoto slot="experience" alt="V Spa experience" />
         <div>
           <span className="eyebrow">Comfort, considered</span>
           <h2>

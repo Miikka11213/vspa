@@ -12,6 +12,7 @@ export const business = {
 export const services = [
   {
     slug: "30-minute-focused-relief-massage",
+    photoSlot: "service-focused",
     title: "Focused Relief",
     duration: "30 min",
     price: 50,
@@ -28,6 +29,7 @@ export const services = [
   },
   {
     slug: "45-minute-signature-flow-massage",
+    photoSlot: "service-signature",
     title: "Signature Flow",
     duration: "45 min",
     price: 60,
@@ -45,6 +47,7 @@ export const services = [
   },
   {
     slug: "60-minute-total-immersion-massage",
+    photoSlot: "service-immersion",
     title: "Total Immersion",
     duration: "60 min",
     price: 80,
@@ -207,8 +210,8 @@ export const navigation = [
   ["Home", "/"],
   ["Services", "/services"],
   ["Pricing", "/pricing"],
-  ["Our team", "/attendants"],
-  ["Appointments", "/schedule"],
+  ["Attendants", "/attendants"],
+  ["Schedule", "/schedule"],
   ["Experience", "/experience"],
   ["Contact", "/contact"],
 ];

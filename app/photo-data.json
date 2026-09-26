@@ -1,0 +1,80 @@
+{
+  "hero": [
+    {
+      "src": "/images/spa-still-life.png",
+      "alt": "Spa towels, massage oil and orchids"
+    }
+  ],
+  "experience": [
+    {
+      "src": "/images/spa-still-life.png",
+      "alt": "Spa towels, massage oil and orchids"
+    }
+  ],
+  "service-focused": [
+    {
+      "src": "/images/spa-still-life.png",
+      "alt": "Spa towels, massage oil and orchids"
+    }
+  ],
+  "service-signature": [
+    {
+      "src": "/images/spa-still-life.png",
+      "alt": "Spa towels, massage oil and orchids"
+    }
+  ],
+  "service-immersion": [
+    {
+      "src": "/images/spa-still-life.png",
+      "alt": "Spa towels, massage oil and orchids"
+    }
+  ],
+  "team-amira": [
+    {
+      "src": "/images/team/amira.png",
+      "alt": "Amira portrait"
+    }
+  ],
+  "team-amy": [
+    {
+      "src": "/images/team/amy.jpeg",
+      "alt": "Amy portrait"
+    }
+  ],
+  "team-ayasha": [
+    {
+      "src": "/images/team/ayasha.jpg",
+      "alt": "Ayasha portrait"
+    }
+  ],
+  "team-bella": [
+    {
+      "src": "/images/team/bella.jpg",
+      "alt": "Bella portrait"
+    }
+  ],
+  "team-elizabeth": [
+    {
+      "src": "/images/team/elizabeth.jpg",
+      "alt": "Elizabeth portrait"
+    }
+  ],
+  "team-judy": [
+    {
+      "src": "/images/team/judy.jpg",
+      "alt": "Judy portrait"
+    }
+  ],
+  "team-mona": [
+    {
+      "src": "/images/team/mona.jpeg",
+      "alt": "Mona portrait"
+    }
+  ],
+  "team-nazima": [
+    {
+      "src": "/images/team/nazima.jpeg",
+      "alt": "Nazima portrait"
+    }
+  ]
+}

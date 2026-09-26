@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { SitePhoto } from "./photos";
 import { usePathname } from "next/navigation";
 import { navigation, services, business } from "./site-data";
 export function Header() {
@@ -74,9 +75,10 @@ export function Banner() {
   return (
     <aside className="offer">
       <div className="container offer-inner">
-        <span className="eyebrow">A little daytime escape</span>
+        <span className="eyebrow">Special pricing</span>
         <p>
-          Visiting between 10 AM and 3 PM? Ask our team about current offers.
+          Daytime discount from 10:00 AM – 3:00 PM. Ask our team for current
+          offers.
         </p>
         <button
           aria-label="Dismiss offer"
@@ -99,7 +101,7 @@ export function ServiceSpotlight() {
   return (
     <div className="spotlight">
       <div className="spotlight-image">
-        <img src={item.image} alt={item.alt} />
+        <SitePhoto slot={item.photoSlot} fallback={item.image} alt={item.alt} />
         <span className="photo-label">THE V SPA COLLECTION</span>
       </div>
       <div className="spotlight-copy">
