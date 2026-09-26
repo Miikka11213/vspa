@@ -130,78 +130,7 @@ export function ServiceSpotlight() {
     </div>
   );
 }
-export function AppointmentPicker() {
-  const [service, setService] = useState(services[1].title);
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-  const message = `Hi V Spa, I'd like to ask about a ${service} appointment${date ? " on " + date : ""}${time ? " around " + time : ""}. Please confirm availability and pricing. Thank you!`;
-  return (
-    <div className="booking-panel">
-      <span className="eyebrow">Plan your appointment</span>
-      <h2>A little time for you.</h2>
-      <p>
-        Choose your preferences, then send a text or call. Our team will confirm
-        availability.
-      </p>
-      <label htmlFor="service">Your treatment</label>
-      <select
-        id="service"
-        value={service}
-        onChange={(e) => setService(e.target.value)}
-      >
-        {services.map((s) => (
-          <option key={s.slug} value={s.title}>
-            {s.title} · {s.duration} · from ${s.price}
-          </option>
-        ))}
-        <option>Facial or body care</option>
-      </select>
-      <div className="form-row">
-        <div>
-          <label htmlFor="date">Preferred date</label>
-          <input
-            id="date"
-            type="date"
-            value={date}
-            onInput={(e) => setDate(e.currentTarget.value)}
-            onChange={(e) => setDate(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="time">Preferred time</label>
-          <select
-            id="time"
-            value={time}
-            onChange={(e) => setTime(e.target.value)}
-          >
-            <option value="">Flexible</option>
-            {Array.from({ length: 11 }, (_, i) => i + 10).map((h) => (
-              <option
-                key={h}
-                value={`${h > 12 ? h - 12 : h}:00 ${h >= 12 ? "PM" : "AM"}`}
-              >
-                {h > 12 ? h - 12 : h}:00 {h >= 12 ? "PM" : "AM"}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-      <a
-        className="button full"
-        href={"sms:" + business.tel + "?body=" + encodeURIComponent(message)}
-      >
-        Text appointment request <span aria-hidden="true">↗</span>
-      </a>
-      <a className="button secondary full" href={"tel:" + business.tel}>
-        Call {business.phone}
-      </a>
-      <p className="form-note">
-        Opens your messaging app. Selecting a date does not reserve a time. Your
-        appointment is confirmed only after our team replies.
-      </p>
-    </div>
-  );
-}
+export { AppointmentPicker } from "./appointment-picker";
 export function HiringForm() {
   const [status, setStatus] = useState("");
   function submit(e) {
