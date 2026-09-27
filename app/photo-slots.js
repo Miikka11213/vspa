@@ -1,3 +1,4 @@
+import { addons } from "./site-data";
 export const photoSlots = [
   {
     id: "hero",
@@ -29,6 +30,12 @@ export const photoSlots = [
     hint: "The featured service photo.",
     limit: 1,
   },
+  ...addons.map((addon) => ({
+    id: addon.photoSlot,
+    label: addon.title + " treatment",
+    hint: "Shown in the services menu and on the treatment page. A landscape photo works best.",
+    limit: 1,
+  })),
   ...[
     "Judy",
     "Mona",

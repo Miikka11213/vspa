@@ -16,8 +16,8 @@ export const services = [
     title: "Focused Relief",
     duration: "30 min",
     price: 50,
-    image: "/images/spa-still-life.png",
-    alt: "Spa towels, massage oil and orchids in soft candlelight",
+    image: "/images/services/focused.jpg",
+    alt: "A relaxation massage with a wooden massage roller",
     description: "A focused massage for a little breathing room in your day.",
     details:
       "Choose the areas that need the most attention. A shorter session leaves time for focused work on your neck, shoulders or back, with pressure adjusted to your comfort.",
@@ -33,8 +33,8 @@ export const services = [
     title: "Signature Flow",
     duration: "45 min",
     price: 60,
-    image: "/images/spa-still-life.png",
-    alt: "Spa towels, massage oil and orchids in soft candlelight",
+    image: "/images/services/signature.jpg",
+    alt: "Hands applying focused pressure during a back massage",
     description:
       "A balanced full-body massage with warm oil and unhurried care.",
     details:
@@ -51,8 +51,8 @@ export const services = [
     title: "Total Immersion",
     duration: "60 min",
     price: 80,
-    image: "/images/spa-still-life.png",
-    alt: "Spa towels, massage oil and orchids in soft candlelight",
+    image: "/images/services/immersion.jpg",
+    alt: "A gentle shoulder treatment on a massage table",
     description:
       "More time to slow down, settle in, and leave feeling refreshed.",
     details:
@@ -67,18 +67,27 @@ export const services = [
 export const addons = [
   {
     slug: "body-scrub",
+    photoSlot: "addon-body-scrub",
+    image: "/images/services/body-scrub.png",
+    alt: "Body scrub applied to the back during a spa treatment",
     title: "Body Scrub",
     price: 25,
     description: "Gentle exfoliation and warm towels for soft, refreshed skin.",
   },
   {
     slug: "facials",
+    photoSlot: "addon-facials",
+    image: "/images/services/facial.png",
+    alt: "A facial mask applied with a soft brush",
     title: "Facial",
     price: 30,
     description: "Cleansing, exfoliation, a soothing mask and hydration.",
   },
   {
     slug: "back-shaving",
+    photoSlot: "addon-back-shaving",
+    image: "/images/services/back-grooming.jpg",
+    alt: "A selection of razors and shaving brushes",
     title: "Back Grooming",
     price: 40,
     description:
@@ -86,6 +95,9 @@ export const addons = [
   },
   {
     slug: "intimate-shaving",
+    photoSlot: "addon-intimate-shaving",
+    image: "/images/services/intimate-grooming.png",
+    alt: "Personal grooming with a razor at the waistline",
     title: "Intimate Grooming",
     price: 55,
     description:
@@ -93,6 +105,9 @@ export const addons = [
   },
   {
     slug: "full-body-shaving",
+    photoSlot: "addon-full-body-shaving",
+    image: "/images/services/full-grooming.jpg",
+    alt: "Shaving brush and razor prepared for grooming",
     title: "Full-Body Grooming",
     price: 220,
     description:

@@ -13,20 +13,20 @@
   ],
   "service-focused": [
     {
-      "src": "/images/spa-still-life.png",
-      "alt": "Spa towels, massage oil and orchids"
+      "src": "/images/services/focused.jpg",
+      "alt": "A relaxation massage with a wooden massage roller"
     }
   ],
   "service-signature": [
     {
-      "src": "/images/spa-still-life.png",
-      "alt": "Spa towels, massage oil and orchids"
+      "src": "/images/services/signature.jpg",
+      "alt": "Hands applying focused pressure during a back massage"
     }
   ],
   "service-immersion": [
     {
-      "src": "/images/spa-still-life.png",
-      "alt": "Spa towels, massage oil and orchids"
+      "src": "/images/services/immersion.jpg",
+      "alt": "A gentle shoulder treatment on a massage table"
     }
   ],
   "team-amira": [
@@ -75,6 +75,36 @@
     {
       "src": "/images/team/nazima.jpeg",
       "alt": "Nazima portrait"
+    }
+  ],
+  "addon-body-scrub": [
+    {
+      "src": "/images/services/body-scrub.png",
+      "alt": "Body scrub applied to the back during a spa treatment"
+    }
+  ],
+  "addon-facials": [
+    {
+      "src": "/images/services/facial.png",
+      "alt": "A facial mask applied with a soft brush"
+    }
+  ],
+  "addon-back-shaving": [
+    {
+      "src": "/images/services/back-grooming.jpg",
+      "alt": "A selection of razors and shaving brushes"
+    }
+  ],
+  "addon-intimate-shaving": [
+    {
+      "src": "/images/services/intimate-grooming.png",
+      "alt": "Personal grooming with a razor at the waistline"
+    }
+  ],
+  "addon-full-body-shaving": [
+    {
+      "src": "/images/services/full-grooming.jpg",
+      "alt": "Shaving brush and razor prepared for grooming"
     }
   ]
 }

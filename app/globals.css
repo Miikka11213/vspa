@@ -2246,3 +2246,15 @@ h2 {
 .appointment-menu fieldset:disabled { opacity: .7; }
 .booking-status:empty { display: none; }
 .appointment-menu .booking-status { margin-top: 20px; padding: 15px; border: 1px solid var(--line); }
+
+/* Treatment photographs: shared menu and individual service pages. */
+.addon-list.addon-photo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; border: 0; }
+.addon-list.addon-photo-grid > a { display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 0; padding: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+.addon-card-photo { display: block; width: 100%; aspect-ratio: 1.58; object-fit: cover; }
+.addon-copy { padding: 24px 24px 0; }
+.addon-list.addon-photo-grid h3 { font-family: inherit; font-size: 1.4rem; }
+.addon-list.addon-photo-grid p { font-size: .95rem; }
+.addon-list.addon-photo-grid .addon-price { display: flex; justify-content: space-between; margin-top: auto; padding: 24px; }
+.treatment-detail-photo { display: block; width: 100%; aspect-ratio: 1.58; object-fit: cover; border-radius: 10px; margin-bottom: 32px; border: 1px solid var(--line); }
+@media (max-width: 950px) { .addon-list.addon-photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .addon-list.addon-photo-grid { grid-template-columns: 1fr; } }

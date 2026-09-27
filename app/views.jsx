@@ -60,10 +60,11 @@ export function ServiceCards() {
 }
 export function Addons() {
   return (
-    <div className="addon-list">
+    <div className="addon-list addon-photo-grid">
       {addons.map((s) => (
         <a href={"/services/" + s.slug} key={s.slug}>
-          <div>
+          <SitePhoto className="addon-card-photo" slot={s.photoSlot} fallback={s.image} alt={s.alt} loading="lazy" />
+          <div className="addon-copy">
             <h3>{s.title}</h3>
             <p>{s.description}</p>
           </div>
@@ -360,6 +361,7 @@ export function ServiceDetail({ service: s }) {
       />
       <section className="container detail-layout section compact">
         <div className="prose">
+          <SitePhoto className="treatment-detail-photo" slot={s.photoSlot} fallback={s.image} alt={s.alt} />
           <h2>Made for your comfort.</h2>
           <p>
             {s.details ||
