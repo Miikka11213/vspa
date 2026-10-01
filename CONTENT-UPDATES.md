@@ -1,6 +1,6 @@
 # Categories and team schedule
 
-The home and services pages show three bilingual category introductions. Priced bookings still use the existing massage and add-on menu. No prices, durations or automatic bookings were invented for sound rituals, head care, hot stones or couples packages; the category pages invite customers to confirm details with the team.
+The home and services pages show three English category introductions. Priced bookings still use the existing massage and add-on menu. No prices, durations or automatic bookings were invented for sound rituals, head care, hot stones or couples packages; the category pages invite customers to confirm details with the team.
 
 Edit category wording and fallback photos in app/treatment-categories.js. Edit staff names and the seven-day roster in app/site-data.js. Tuesday includes Elizabeth, Kim and Warda (the screenshot partly covers Kim). Existing Elizabeth spelling is retained.
 

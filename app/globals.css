@@ -2261,11 +2261,9 @@ h2 {
 
 /* Treatment categories and the weekly team roster. */
 .category-card .card-top { padding-bottom: 0; }
-.category-card .category-chinese { margin: 18px 30px 10px; padding: 0; color: var(--accent); font-size: 1.15rem; letter-spacing: .07em; }
 .category-card h3 { font-size: clamp(1.35rem, 2vw, 1.8rem); }
 .category-card .card-bottom { justify-content: flex-start; }
 .category-section { scroll-margin-top: 100px; }
-.category-subtitle { margin: -12px 0 32px; max-width: 780px; color: var(--muted); line-height: 1.9; }
 .category-extras { margin-top: 35px; }
 .journey-inquiry { padding: 36px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
 .journey-inquiry h3 { font-size: 2rem; margin: 15px 0; }

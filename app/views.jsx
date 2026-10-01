@@ -33,7 +33,6 @@ export function CategoryCards() {
     {treatmentCategories.map((category, index) => <article className="service-card category-card" key={category.id}>
       <SitePhoto className="service-card-photo" slot={category.photoSlot} fallback={category.image} alt={category.alt} loading="lazy" />
       <div className="card-top"><span className="eyebrow">CATEGORY {index + 1}</span></div>
-      <p className="category-chinese" lang="zh-Hant">{category.chinese}</p>
       <h3>{category.title}</h3>
       <p>{category.description}</p>
       <div className="card-bottom"><a href={"/services#" + category.id}>Explore this category <span aria-hidden="true">↗</span></a></div>
@@ -304,7 +303,6 @@ export function Services() {
     <section className="container section compact"><CategoryCards /></section>
     {treatmentCategories.map((category,index) => <section key={category.id} id={category.id} className="container section category-section">
       <SectionTitle eyebrow={"CATEGORY " + (index + 1)} title={category.title} text={category.description} />
-      <p className="category-subtitle" lang="zh-Hant">{category.chinese} — {category.descriptionZh}</p>
       {category.id === "face-head" ? <><Addons items={addons.filter(item => item.slug === "facials")} /><p className="note">Ask our team about face and head rituals, session options and availability.</p></> : category.id === "body-rituals" ? <><ServiceCards /><p className="note">Published starting prices. Our team will confirm the service details and final price before your visit.</p><div className="category-extras"><Addons items={addons.filter(item => item.slug !== "facials")} /></div></> : <div className="journey-inquiry"><span className="eyebrow">A VISIT, TOGETHER</span><h3>Make it a shared moment.</h3><p>Tell us what you have in mind. Contact our team to discuss a personal spa journey or a couples’ visit, including available treatments, appointment length and pricing.</p><a className="button secondary" href="/contact">Plan your spa journey ↗</a></div>}
     </section>)}
     <FAQs /><CTA />
