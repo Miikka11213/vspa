@@ -1,4 +1,5 @@
-import { addons } from "./site-data";
+import { treatmentCategories } from "./treatment-categories";
+import { addons, team } from "./site-data";
 export const photoSlots = [
   {
     id: "hero",
@@ -30,22 +31,17 @@ export const photoSlots = [
     hint: "The featured service photo.",
     limit: 1,
   },
+  ...treatmentCategories.map((category) => ({
+    id: category.photoSlot, label: category.title + " category",
+    hint: "A landscape photo for the main category cards.", limit: 1,
+  })),
   ...addons.map((addon) => ({
     id: addon.photoSlot,
     label: addon.title + " treatment",
     hint: "Shown in the services menu and on the treatment page. A landscape photo works best.",
     limit: 1,
   })),
-  ...[
-    "Judy",
-    "Mona",
-    "Elizabeth",
-    "Ayasha",
-    "Bella",
-    "Amira",
-    "Amy",
-    "Nazima",
-  ].map((name) => ({
+  ...team.map(({ name }) => ({
     id: "team-" + name.toLowerCase(),
     label: name + " gallery",
     hint: "The first photo is used on the homepage. Add up to 8 photos.",

@@ -29,18 +29,6 @@
       "alt": "A gentle shoulder treatment on a massage table"
     }
   ],
-  "team-amira": [
-    {
-      "src": "/images/team/amira.png",
-      "alt": "Amira portrait"
-    }
-  ],
-  "team-amy": [
-    {
-      "src": "/images/team/amy.jpeg",
-      "alt": "Amy portrait"
-    }
-  ],
   "team-ayasha": [
     {
       "src": "/images/team/ayasha.jpg",
@@ -71,12 +59,6 @@
       "alt": "Mona portrait"
     }
   ],
-  "team-nazima": [
-    {
-      "src": "/images/team/nazima.jpeg",
-      "alt": "Nazima portrait"
-    }
-  ],
   "addon-body-scrub": [
     {
       "src": "/images/services/body-scrub.png",
@@ -105,6 +87,44 @@
     {
       "src": "/images/services/full-grooming.jpg",
       "alt": "Shaving brush and razor prepared for grooming"
+    }
+  ],
+  "team-warda": [
+    {
+      "src": "/images/team/warda-1.jpg",
+      "alt": "Warda \u2014 photo 1"
+    },
+    {
+      "src": "/images/team/warda-2.jpg",
+      "alt": "Warda \u2014 photo 2"
+    },
+    {
+      "src": "/images/team/warda-3.jpg",
+      "alt": "Warda \u2014 photo 3"
+    }
+  ],
+  "team-kim": [
+    {
+      "src": "/images/team/kim-1.jpg",
+      "alt": "Kim \u2014 photo 1"
+    },
+    {
+      "src": "/images/team/kim-2.jpg",
+      "alt": "Kim \u2014 photo 2"
+    }
+  ],
+  "team-suki": [
+    {
+      "src": "/images/team/suki-1.jpg",
+      "alt": "Suki \u2014 photo 1"
+    },
+    {
+      "src": "/images/team/suki-2.jpg",
+      "alt": "Suki \u2014 photo 2"
+    },
+    {
+      "src": "/images/team/suki-3.jpg",
+      "alt": "Suki \u2014 photo 3"
     }
   ]
 }

@@ -2258,3 +2258,31 @@ h2 {
 .treatment-detail-photo { display: block; width: 100%; aspect-ratio: 1.58; object-fit: cover; border-radius: 10px; margin-bottom: 32px; border: 1px solid var(--line); }
 @media (max-width: 950px) { .addon-list.addon-photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 600px) { .addon-list.addon-photo-grid { grid-template-columns: 1fr; } }
+
+/* Treatment categories and the weekly team roster. */
+.category-card .card-top { padding-bottom: 0; }
+.category-card .category-chinese { margin: 18px 30px 10px; padding: 0; color: var(--accent); font-size: 1.15rem; letter-spacing: .07em; }
+.category-card h3 { font-size: clamp(1.35rem, 2vw, 1.8rem); }
+.category-card .card-bottom { justify-content: flex-start; }
+.category-section { scroll-margin-top: 100px; }
+.category-subtitle { margin: -12px 0 32px; max-width: 780px; color: var(--muted); line-height: 1.9; }
+.category-extras { margin-top: 35px; }
+.journey-inquiry { padding: 36px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+.journey-inquiry h3 { font-size: 2rem; margin: 15px 0; }
+.journey-inquiry p { max-width: 680px; margin-bottom: 24px; color: var(--muted); line-height: 1.8; }
+.weekly-roster { margin-top: 25px; padding: 28px; border: 1px solid var(--line); border-radius: 10px; background: linear-gradient(150deg, #21182f, #100d17); }
+.roster-heading h2 { font-size: 2rem; margin: 12px 0; }
+.roster-heading p, .roster-note { color: var(--muted); font-size: .9rem; line-height: 1.65; }
+.weekly-roster table { width: 100%; border-collapse: collapse; margin: 24px 0 18px; }
+.weekly-roster th { text-align: left; font-weight: 500; }
+.weekly-roster thead th { font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); padding: 0 0 14px; }
+.weekly-roster tbody th { padding: 18px 16px 18px 0; font-size: .84rem; white-space: nowrap; }
+.weekly-roster tbody td { padding: 14px 0; }
+.weekly-roster tbody tr { border-top: 1px solid #ffffff15; }
+.roster-names { display: flex; gap: 6px; flex-wrap: wrap; }
+.roster-names a { padding: 6px 9px; font-size: .78rem; border: 1px solid #b892d132; background: #c99bea09; border-radius: 5px; }
+.roster-names a:hover { border-color: var(--accent); color: var(--accent); }
+.weekly-roster .text-link { margin-top: 20px; }
+.team-card .team-workdays { font-size: .8rem; color: var(--accent); letter-spacing: .03em; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+@media (max-width: 600px) { .weekly-roster { padding: 20px 16px; } .weekly-roster tbody th { padding-right: 10px; font-size: .78rem; } .roster-names a { font-size: .72rem; padding: 5px 7px; } }

@@ -114,15 +114,25 @@ export const addons = [
       "A complete grooming session with skin preparation and aftercare. Confirm areas and appointment length when booking.",
   },
 ];
+// Update the weekly roster here. Names must match the team list below.
+export const weeklySchedule = [
+  { day: "Monday", names: ["Ayasha", "Warda", "Bella"] },
+  { day: "Tuesday", names: ["Elizabeth", "Kim", "Warda"] },
+  { day: "Wednesday", names: ["Elizabeth", "Judy"] },
+  { day: "Thursday", names: ["Elizabeth", "Kim", "Ayasha"] },
+  { day: "Friday", names: ["Ayasha", "Mona", "Warda"] },
+  { day: "Saturday", names: ["Ayasha", "Suki", "Judy"] },
+  { day: "Sunday", names: ["Suki", "Bella", "Ayasha"] },
+];
 export const team = [
+  { name: "Ayasha", specialty: "Relaxation massage" },
+  { name: "Warda", specialty: "Spa team" },
+  { name: "Bella", specialty: "Massage & spa care" },
+  { name: "Elizabeth", specialty: "Massage & bodywork" },
+  { name: "Kim", specialty: "Spa team" },
   { name: "Judy", specialty: "Facials & grooming" },
   { name: "Mona", specialty: "Relaxation & Swedish massage" },
-  { name: "Elizabeth", specialty: "Massage & bodywork" },
-  { name: "Ayasha", specialty: "Relaxation massage" },
-  { name: "Bella", specialty: "Massage & spa care" },
-  { name: "Amira", specialty: "Massage & spa care" },
-  { name: "Amy", specialty: "Massage & spa care" },
-  { name: "Nazima", specialty: "Swedish massage & facials" },
+  { name: "Suki", specialty: "Spa team" },
 ];
 export const guides = [
   {

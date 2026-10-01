@@ -1,6 +1,7 @@
+import { treatmentCategories } from "./treatment-categories";
 import originalGuides from "./original-guides.json";
 import { SitePhoto, TeamGallery, FeaturedTeam } from "./photos";
-import { services, addons, team, guides, business, faq } from "./site-data";
+import { services, addons, team, weeklySchedule, guides, business, faq } from "./site-data";
 import { ServiceSpotlight, AppointmentPicker, HiringForm } from "./ui";
 export function SectionTitle({ eyebrow, title, text, link, label }) {
   return (
@@ -26,6 +27,29 @@ export function PageIntro({ eyebrow, title, text }) {
       <p>{text}</p>
     </div>
   );
+}
+export function CategoryCards() {
+  return <div className="service-grid category-grid">
+    {treatmentCategories.map((category, index) => <article className="service-card category-card" key={category.id}>
+      <SitePhoto className="service-card-photo" slot={category.photoSlot} fallback={category.image} alt={category.alt} loading="lazy" />
+      <div className="card-top"><span className="eyebrow">CATEGORY {index + 1}</span></div>
+      <p className="category-chinese" lang="zh-Hant">{category.chinese}</p>
+      <h3>{category.title}</h3>
+      <p>{category.description}</p>
+      <div className="card-bottom"><a href={"/services#" + category.id}>Explore this category <span aria-hidden="true">↗</span></a></div>
+    </article>)}
+  </div>;
+}
+export function WeeklyRoster() {
+  return <section className="weekly-roster" aria-labelledby="weekly-roster-title">
+    <div className="roster-heading"><span className="eyebrow">THE WEEK AT V SPA</span><h2 id="weekly-roster-title">Find your day.</h2><p>Meet the team on your preferred day.</p></div>
+    <table><caption className="visually-hidden">Weekly staff schedule</caption>
+      <thead><tr><th scope="col">Day</th><th scope="col">Scheduled team</th></tr></thead>
+      <tbody>{weeklySchedule.map(({day,names}) => <tr key={day}><th scope="row">{day}</th><td><div className="roster-names">{names.map(name => <a key={name} href={"/attendants#" + name.toLowerCase()}>{name}</a>)}</div></td></tr>)}</tbody>
+    </table>
+    <p className="roster-note">Schedule may change. Please confirm availability when booking.</p>
+    <a className="text-link" href="/attendants">Meet our team ↗</a>
+  </section>;
 }
 export function ServiceCards() {
   return (
@@ -58,10 +82,10 @@ export function ServiceCards() {
     </div>
   );
 }
-export function Addons() {
+export function Addons({ items = addons }) {
   return (
     <div className="addon-list addon-photo-grid">
-      {addons.map((s) => (
+      {items.map((s) => (
         <a href={"/services/" + s.slug} key={s.slug}>
           <SitePhoto className="addon-card-photo" slot={s.photoSlot} fallback={s.image} alt={s.alt} loading="lazy" />
           <div className="addon-copy">
@@ -198,12 +222,11 @@ export function Home() {
         <SectionTitle
           eyebrow="The art of slowing down"
           title="A treatment for your kind of day."
-          text="A quick reset or a little longer to unwind. Find a massage that meets you where you are."
+          text="Three ways to unwind. Explore care for the face and head, restorative body rituals, and shared spa journeys."
           link="/services"
           label="All treatments"
         />
-        <ServiceSpotlight />
-        <ServiceCards />
+        <CategoryCards />
       </section>
       <section className="section container featured-team-section">
         <SectionTitle
@@ -276,32 +299,16 @@ export function Home() {
   );
 }
 export function Services() {
-  return (
-    <>
-      <PageIntro
-        eyebrow="Massage & body care"
-        title="Find your moment of calm."
-        text="Choose your pace, tell us your preferences, and let the rest of the day wait."
-      />
-      <section className="container section compact">
-        <ServiceCards />
-        <p className="note">
-          Prices shown are the published starting prices. Confirm your
-          treatment, add-ons and final price with the team before your visit.
-        </p>
-      </section>
-      <section className="container section">
-        <SectionTitle
-          eyebrow="The finishing touches"
-          title="A little extra care."
-          text="Add a facial, body scrub or grooming treatment. Let us know when booking so we can reserve enough time."
-        />
-        <Addons />
-      </section>
-      <FAQs />
-      <CTA />
-    </>
-  );
+  return <>
+    <PageIntro eyebrow="Massage & body care" title="Find your moment of calm." text="Explore three ways to slow down, reconnect and make time for yourself." />
+    <section className="container section compact"><CategoryCards /></section>
+    {treatmentCategories.map((category,index) => <section key={category.id} id={category.id} className="container section category-section">
+      <SectionTitle eyebrow={"CATEGORY " + (index + 1)} title={category.title} text={category.description} />
+      <p className="category-subtitle" lang="zh-Hant">{category.chinese} — {category.descriptionZh}</p>
+      {category.id === "face-head" ? <><Addons items={addons.filter(item => item.slug === "facials")} /><p className="note">Ask our team about face and head rituals, session options and availability.</p></> : category.id === "body-rituals" ? <><ServiceCards /><p className="note">Published starting prices. Our team will confirm the service details and final price before your visit.</p><div className="category-extras"><Addons items={addons.filter(item => item.slug !== "facials")} /></div></> : <div className="journey-inquiry"><span className="eyebrow">A VISIT, TOGETHER</span><h3>Make it a shared moment.</h3><p>Tell us what you have in mind. Contact our team to discuss a personal spa journey or a couples’ visit, including available treatments, appointment length and pricing.</p><a className="button secondary" href="/contact">Plan your spa journey ↗</a></div>}
+    </section>)}
+    <FAQs /><CTA />
+  </>;
 }
 export function Pricing() {
   return (
@@ -419,36 +426,7 @@ export function Appointments() {
               available.
             </p>
           </div>
-          <div className="steps">
-            {[
-              [
-                "01",
-                "Choose your treatment",
-                "Pick a massage length and any skincare or grooming add-ons.",
-              ],
-              [
-                "02",
-                "Contact the spa",
-                "Send your preferred day and time, or give us a call.",
-              ],
-              [
-                "03",
-                "Wait for confirmation",
-                "Our team confirms your appointment and the details before you arrive.",
-              ],
-            ].map(([n, t, d]) => (
-              <div key={n}>
-                <span>{n}</span>
-                <div>
-                  <h3>{t}</h3>
-                  <p>{d}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <a className="text-link" href="/attendants">
-            Meet our team ↗
-          </a>
+          <WeeklyRoster />
         </div>
         <AppointmentPicker />
       </section>
@@ -477,6 +455,7 @@ export function Team() {
                 <span className="eyebrow">SPA TEAM</span>
                 <h2>{t.name}</h2>
                 <p>{t.specialty}</p>
+                <p className="team-workdays">{weeklySchedule.filter(day => day.names.includes(t.name)).map(day => day.day.slice(0, 3)).join(" · ")}</p>
                 <a
                   className="text-link"
                   href={
@@ -495,8 +474,8 @@ export function Team() {
           ))}
         </div>
         <p className="note">
-          Team information is based on the published website. Please confirm
-          current staff and service availability when booking.
+          The team follows our weekly roster. Please confirm current availability
+          when booking.
         </p>
       </section>
       <CTA />
