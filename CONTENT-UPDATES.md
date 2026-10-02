@@ -1,6 +1,8 @@
 # Categories and team schedule
 
-The home and services pages show three English category introductions. Priced bookings still use the existing massage and add-on menu. No prices, durations or automatic bookings were invented for sound rituals, head care, hot stones or couples packages; the category pages invite customers to confirm details with the team.
+The English menu follows the owner's October 2 Word document: Body Rituals & Therapy (30/45/60 minutes at $120/$150/$160), Luxury 4-Hand Hot Stone & Oil Ritual (30/45/60 minutes at $240/$280/$300; two therapists treating one guest), and Spoil Me Package ($399 per person, two hours only). The original three massage URLs remain valid with the revised names and content.
+
+Spoil Me includes a 45-minute Swedish or deep tissue massage, a 20-minute body scrub, and either private shaving or a 20-minute facial, plus a soothing touch ritual. The calculator defaults to Swedish massage and facial; the customer can change either choice. Included treatments never add separate charges. The server validates the same quote before generating the appointment email. Package start times end at 7 PM to fit the two-hour visit before the 9 PM closing. Shared calculation rules are in app/booking-menu.js; meaningful price and mocked-email checks are in tests/booking-menu.test.mjs.
 
 Edit category wording and fallback photos in app/treatment-categories.js. Edit staff names and the seven-day roster in app/site-data.js. Tuesday includes Elizabeth, Kim and Warda (the screenshot partly covers Kim). Existing Elizabeth spelling is retained.
 

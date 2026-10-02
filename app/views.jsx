@@ -2,7 +2,7 @@ import { treatmentCategories } from "./treatment-categories";
 import originalGuides from "./original-guides.json";
 import { SitePhoto, TeamGallery, FeaturedTeam } from "./photos";
 import { services, addons, team, weeklySchedule, guides, business, faq } from "./site-data";
-import { ServiceSpotlight, AppointmentPicker, HiringForm } from "./ui";
+import { AppointmentPicker, HiringForm } from "./ui";
 export function SectionTitle({ eyebrow, title, text, link, label }) {
   return (
     <div className="section-heading">
@@ -35,6 +35,9 @@ export function CategoryCards() {
       <div className="card-top"><span className="eyebrow">CATEGORY {index + 1}</span></div>
       <h3>{category.title}</h3>
       <p>{category.description}</p>
+      <ul className="category-rates" aria-label={category.title + " prices"}>
+        {category.options.map(option => <li key={option.slug}><span>{option.duration}{option.isPackage ? " · per person" : ""}</span><strong>${option.price}</strong></li>)}
+      </ul>
       <div className="card-bottom"><a href={"/services#" + category.id}>Explore this category <span aria-hidden="true">↗</span></a></div>
     </article>)}
   </div>;
@@ -50,10 +53,10 @@ export function WeeklyRoster() {
     <a className="text-link" href="/attendants">Meet our team ↗</a>
   </section>;
 }
-export function ServiceCards() {
+export function ServiceCards({ items = services }) {
   return (
-    <div className="service-grid">
-      {services.map((s, i) => (
+    <div className={"service-grid" + (items.length === 1 ? " single-service" : "")}>
+      {items.map((s, i) => (
         <article className="service-card" key={s.slug}>
           <SitePhoto
             className="service-card-photo"
@@ -70,7 +73,7 @@ export function ServiceCards() {
           <p>{s.description}</p>
           <div className="card-bottom">
             <span>
-              From <strong>${s.price}</strong>
+              {s.isPackage ? "Per person" : "From"} <strong>${s.price}</strong>
             </span>
             <a aria-label={"Explore " + s.title} href={"/services/" + s.slug}>
               Explore <span aria-hidden="true">↗</span>
@@ -221,7 +224,7 @@ export function Home() {
         <SectionTitle
           eyebrow="The art of slowing down"
           title="A treatment for your kind of day."
-          text="Three ways to unwind. Explore care for the face and head, restorative body rituals, and shared spa journeys."
+          text="Find your ritual: botanical oil therapy, a synchronized four-hand treatment, or two hours of care with our Spoil Me package."
           link="/services"
           label="All treatments"
         />
@@ -303,8 +306,10 @@ export function Services() {
     <section className="container section compact"><CategoryCards /></section>
     {treatmentCategories.map((category,index) => <section key={category.id} id={category.id} className="container section category-section">
       <SectionTitle eyebrow={"CATEGORY " + (index + 1)} title={category.title} text={category.description} />
-      {category.id === "face-head" ? <><Addons items={addons.filter(item => item.slug === "facials")} /><p className="note">Ask our team about face and head rituals, session options and availability.</p></> : category.id === "body-rituals" ? <><ServiceCards /><p className="note">Published starting prices. Our team will confirm the service details and final price before your visit.</p><div className="category-extras"><Addons items={addons.filter(item => item.slug !== "facials")} /></div></> : <div className="journey-inquiry"><span className="eyebrow">A VISIT, TOGETHER</span><h3>Make it a shared moment.</h3><p>Tell us what you have in mind. Contact our team to discuss a personal spa journey or a couples’ visit, including available treatments, appointment length and pricing.</p><a className="button secondary" href="/contact">Plan your spa journey ↗</a></div>}
+      <ServiceCards items={category.options} />
+      <p className="note">{category.id === "spoil-me" ? "$399 per person for a two-hour visit. Your selected package treatments are included." : category.id === "four-hand" ? "Two therapists treating one guest. Choose 30, 45 or 60 minutes." : "Choose 30, 45 or 60 minutes of botanical oil care."}</p>
     </section>)}
+    <section className="container section"><SectionTitle eyebrow="Finishing touches" title="A little extra care." text="Add body care or skincare to an individual massage. The Spoil Me package already includes its selected treatments." /><Addons /></section>
     <FAQs /><CTA />
   </>;
 }
@@ -323,7 +328,7 @@ export function Pricing() {
               <span className="eyebrow">{s.duration}</span>
               <h2>{s.title}</h2>
               <div className="price">
-                <small>From</small> ${s.price}
+                <small>{s.isPackage ? "Per person" : "From"}</small> ${s.price}
               </div>
               <ul>
                 {s.features.map((f) => (
@@ -358,7 +363,7 @@ export function ServiceDetail({ service: s }) {
       <PageIntro
         eyebrow={
           s.duration
-            ? `${s.duration} · From $${s.price}`
+            ? `${s.duration} · ${s.isPackage ? "Per person" : "From"} $${s.price}`
             : `Body care · From $${s.price}`
         }
         title={s.title + "."}
@@ -392,7 +397,7 @@ export function ServiceDetail({ service: s }) {
         <aside className="booking-panel">
           <span className="eyebrow">Your next appointment</span>
           <h2>{s.title}</h2>
-          <p className="price">From ${s.price}</p>
+          <p className="price">{s.isPackage ? "Per person" : "From"} ${s.price}</p>
           <p>{s.duration || "Contact us to confirm treatment time"}</p>
           <a className="button full" href="/schedule">
             Check availability ↗

@@ -1,5 +1,7 @@
 # Service photo sources
 
+four-hand-ritual.png: Provided by the owner on October 2, 2026 and copied unchanged from the attached PNG. Used for the four-hand category and all three duration options.
+
 The three PNG images (body scrub, facial and intimate grooming) were provided by the owner in temp/ and copied unchanged into public/images/services. The source folder is not committed.
 
 Stock photographs used under the Unsplash License (https://unsplash.com/license), downloaded September 27, 2026:

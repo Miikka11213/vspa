@@ -1,18 +1,20 @@
-// Category copy is separate from the priced booking menu in site-data.js.
+import { services } from "./site-data";
+
+// Durations and prices come from the shared service menu.
 export const treatmentCategories = [
   {
-    id: "face-head", title: "Face & Head Wellness",
-    description: "A quiet reset for busy minds. Soothing sound rituals and gentle face and head care invite you to unwind and settle into deep relaxation.",
-    photoSlot: "category-face-head", image: "/images/services/facial.png", alt: "A calming facial treatment",
-  },
-  {
     id: "body-rituals", title: "Body Rituals & Therapy",
-    description: "Restorative body care with premium oils, warming stones and thoughtful skin rituals. Ease everyday tension and leave feeling refreshed, from head to toe.",
-    photoSlot: "category-body-rituals", image: "/images/services/signature.jpg", alt: "Hands working gently along the back during a massage",
+    description: "Our signature escape for restorative body care. With 100% pure botanical oils, flowing rhythmic strokes and gentle warmth, our therapists help ease muscle tension and everyday fatigue. A tranquil pause for busy lives, leaving you feeling refreshed and light.",
+    photoSlot: "category-body-rituals", image: "/images/services/signature.jpg", alt: "Hands working gently along the back during a botanical oil massage",
   },
   {
-    id: "mind-couples", title: "Mindful Journeys & Couples",
-    description: "An unhurried escape, for yourself or someone special. Immersive spa journeys and shared moments bring attentive care and a sense of occasion to your visit.",
-    photoSlot: "category-mind-couples", image: "/images/spa-still-life.png", alt: "Massage oils, folded towels and orchids in soft light",
+    id: "four-hand", title: "Luxury 4-Hand Hot Stone & Oil Ritual",
+    description: "Two therapists work in unison, like a synchronized duet, delivering a flowing four-hand oil massage to one guest. Premium botanical oils and warming Himalayan volcanic hot stones make this a luxurious, immersive ritual for deep relaxation.",
+    photoSlot: "category-four-hand", image: "/images/services/four-hand-ritual.png", alt: "Two therapists massaging one guest in a synchronized four-hand treatment",
   },
-];
+  {
+    id: "spoil-me", title: "Spoil Me Package",
+    description: "Allow two hours of care, just for you. Your $399 package includes a 45-minute Swedish or deep tissue massage, a 20-minute body scrub, and either private shaving or a 20-minute facial, completed with a soothing touch ritual. Priced per person.",
+    photoSlot: "category-spoil-me", image: "/images/spa-still-life.png", alt: "Spa oils, folded towels and orchids in soft light",
+  },
+].map(category => ({ ...category, options: services.filter(service => service.categoryId === category.id) }));

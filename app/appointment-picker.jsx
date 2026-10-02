@@ -1,27 +1,40 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { services, addons, business } from "./site-data";
+import { treatmentCategories } from "./treatment-categories";
+import { getBookingQuote, getBookingTimes, massageStyles, packageChoices, addonLabel } from "./booking-menu";
 
 export function AppointmentPicker() {
   const [ready, setReady] = useState(false);
   useEffect(() => setReady(true), []);
   const [service, setService] = useState(services[1].slug);
   const [selected, setSelected] = useState([]);
+  const [massageStyle, setMassageStyle] = useState(massageStyles[0]);
+  const [time, setTime] = useState("");
   const [status, setStatus] = useState("");
   const [pending, setPending] = useState(false);
   const [sent, setSent] = useState(false);
   const requestKey = useRef(null);
   const busy = useRef(false);
-  const treatment = services.find(s => s.slug === service);
-  const extras = addons.filter(a => selected.includes(a.slug));
-  const total = treatment.price + extras.reduce((sum, a) => sum + a.price, 0);
+  const quote = getBookingQuote({ service, addons: selected, massageStyle });
+  const { service: treatment, extras, total } = quote;
+  const category = treatment.categoryId;
+  const times = getBookingTimes(quote.durationMinutes);
+  const selectedTime = times.includes(time) ? time : "";
+  function chooseService(slug) {
+    const next = services.find(item => item.slug === slug);
+    setService(slug);
+    setSelected(next.isPackage ? ["body-scrub", "facials"] : []);
+    setMassageStyle(massageStyles[0]);
+    setTime("");
+  }
   async function submit(event) {
     event.preventDefault();
     if (busy.current) return;
     busy.current = true;
     setPending(true); setStatus("");
     const fields = Object.fromEntries(new FormData(event.currentTarget));
-    const payload = { ...fields, service, addons: selected };
+    const payload = { ...fields, service, addons: selected, massageStyle: treatment.isPackage ? massageStyle : null };
     const fingerprint = JSON.stringify(payload);
     if (requestKey.current?.fingerprint !== fingerprint) {
       requestKey.current = { fingerprint, id: crypto.randomUUID() };
@@ -42,26 +55,44 @@ export function AppointmentPicker() {
   return <form className="booking-panel appointment-menu" method="post" onSubmit={submit}>
     <span className="eyebrow">Plan your appointment</span>
     <h2>Make it your own.</h2>
-    <p>Choose your massage and finishing touches. Send us your preferred time and we’ll confirm your visit.</p>
+    <p>Choose your ritual, duration and finishing touches. Send us your preferred time and we’ll confirm your visit.</p>
     <fieldset disabled={!ready || pending || sent}>
       <legend>Your visit</legend>
-      <label htmlFor="booking-service">Massage & duration</label>
-      <select id="booking-service" value={service} onChange={e => setService(e.target.value)}>
-        {services.map(s => <option key={s.slug} value={s.slug}>{s.title} · {s.duration} · ${s.price}</option>)}
+      <label htmlFor="booking-category">Choose your ritual</label>
+      <select id="booking-category" value={category} onChange={e => chooseService(services.find(item => item.categoryId === e.target.value).slug)}>
+        {treatmentCategories.map(item => <option key={item.id} value={item.id}>{item.title}</option>)}
       </select>
-      <fieldset className="booking-addons">
+      <label htmlFor="booking-service">{treatment.isPackage ? "Package & duration" : "Treatment & duration"}</label>
+      <select id="booking-service" value={service} onChange={e => chooseService(e.target.value)}>
+        {services.filter(item => item.categoryId === category).map(s => <option key={s.slug} value={s.slug}>{s.title} · {s.duration} · ${s.price}{s.isPackage ? " per person" : ""}</option>)}
+      </select>
+      {category === "four-hand" && <p className="form-note">Two therapists treating one guest.</p>}
+      {treatment.isPackage ? <fieldset className="booking-addons booking-package">
+        <legend>Included in your $399 package</legend>
+        <label htmlFor="booking-massage-style">Your 45-minute massage</label>
+        <select id="booking-massage-style" value={massageStyle} onChange={e => setMassageStyle(e.target.value)}>{massageStyles.map(style => <option key={style}>{style}</option>)}</select>
+        <label className="booking-addon"><input type="checkbox" checked disabled /><span>Body Scrub · 20 min</span><strong>Included</strong></label>
+        <p className="form-note">Choose one finishing treatment:</p>
+        {packageChoices.map(id => {
+          const addon = addons.find(item => item.slug === id);
+          return <label className="booking-addon" key={id}><input type="radio" name="packageFinishing" value={id} checked={selected.includes(id)} onChange={() => setSelected(["body-scrub", id])} /><span>{addonLabel(addon)}{addon.durationMinutes ? ` · ${addon.durationMinutes} min` : ""}</span><strong>Included</strong></label>;
+        })}
+        <p className="form-note">A soothing touch ritual completes your two-hour visit.</p>
+      </fieldset> : <fieldset className="booking-addons">
         <legend>Optional add-ons · charged once each</legend>
         {addons.map(a => <label className="booking-addon" key={a.slug}>
           <input type="checkbox" checked={selected.includes(a.slug)} onChange={e => setSelected(current => e.target.checked ? [...current, a.slug] : current.filter(id => id !== a.slug))} />
-          <span>{a.title}</span><strong>+${a.price}</strong>
+          <span>{a.title}{a.durationMinutes ? ` · ${a.durationMinutes} min` : ""}</span><strong>+${a.price}</strong>
         </label>)}
-      </fieldset>
+      </fieldset>}
       <div className="booking-estimate" aria-live="polite" aria-atomic="true">
         <div><span>{treatment.title} · {treatment.duration}</span><span>${treatment.price}</span></div>
-        {extras.map(a => <div key={a.slug}><span>{a.title}</span><span>${a.price}</span></div>)}
-        <div className="booking-total"><strong>Estimated price</strong><strong>${total} CAD</strong></div>
+        {treatment.isPackage && <div><span>{massageStyle} · 45 min</span><span>Included</span></div>}
+        {extras.map(a => <div key={a.slug}><span>{treatment.isPackage ? addonLabel(a) : a.title}{a.durationMinutes ? ` · ${a.durationMinutes} min` : ""}</span><span>{treatment.isPackage ? "Included" : `$${a.price}`}</span></div>)}
+        {treatment.isPackage && <div><span>Soothing touch ritual</span><span>Included</span></div>}
+        <div className="booking-total"><strong>{treatment.isPackage ? "Package price" : "Estimated price"}</strong><strong>${total} CAD{treatment.isPackage ? " / person" : ""}</strong></div>
       </div>
-      <p className="form-note">Add-ons extend your visit. Our team will confirm the total appointment length and final price.</p>
+      <p className="form-note">{quote.note}</p>
       <label htmlFor="booking-name">Your name</label>
       <input id="booking-name" name="name" autoComplete="name" required maxLength={100} />
       <div className="form-row">
@@ -70,9 +101,9 @@ export function AppointmentPicker() {
       </div>
       <div className="form-row">
         <div><label htmlFor="booking-date">Preferred date</label><input id="booking-date" name="date" type="date" required /></div>
-        <div><label htmlFor="booking-time">Preferred time (Toronto)</label><select id="booking-time" name="time" required defaultValue="">
+        <div><label htmlFor="booking-time">Preferred time (Toronto)</label><select id="booking-time" name="time" required value={selectedTime} onChange={e => setTime(e.target.value)}>
           <option value="" disabled>Choose a time</option>
-          {Array.from({length:21}, (_, i) => { const h = 10 + Math.floor(i / 2); const m = i % 2 ? "30" : "00"; return <option key={i} value={`${h}:${m}`}>{h > 12 ? h - 12 : h}:{m} {h >= 12 ? "PM" : "AM"}</option>; })}
+          {times.map(value => { const [h,m] = value.split(":"); const hour = Number(h); return <option key={value} value={value}>{hour > 12 ? hour - 12 : hour}:{m} {hour >= 12 ? "PM" : "AM"}</option>; })}
         </select></div>
       </div>
       <label htmlFor="booking-notes">Anything else? (optional)</label>

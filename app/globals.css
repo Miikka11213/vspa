@@ -2263,6 +2263,13 @@ h2 {
 .category-card .card-top { padding-bottom: 0; }
 .category-card h3 { font-size: clamp(1.35rem, 2vw, 1.8rem); }
 .category-card .card-bottom { justify-content: flex-start; }
+.category-card .category-rates { list-style: none; padding: 0; margin: 4px 30px 24px; border-top: 1px solid var(--line); }
+.category-rates li { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: .9rem; }
+.category-rates strong { color: var(--text); white-space: nowrap; }
+.service-grid.single-service { grid-template-columns: minmax(0, 1fr); max-width: 700px; }
+.booking-package > label:not(.booking-addon) { display: block; margin-bottom: 8px; }
+.booking-package > select { margin-bottom: 18px; }
+.booking-addon input[type="radio"] { accent-color: var(--accent); }
 .category-section { scroll-margin-top: 100px; }
 .category-extras { margin-top: 35px; }
 .journey-inquiry { padding: 36px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
