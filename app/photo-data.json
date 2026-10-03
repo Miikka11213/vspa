@@ -129,5 +129,14 @@
       "alt": "Kim \u2014 photo 2"
     }
   ],
-  "team-eliza": []
+  "team-eliza": [
+    {
+      "src": "/images/team/eliza-1.jpg",
+      "alt": "Eliza - photo 1"
+    },
+    {
+      "src": "/images/team/eliza-2.jpg",
+      "alt": "Eliza - photo 2"
+    }
+  ]
 }
