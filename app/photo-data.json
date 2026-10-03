@@ -129,18 +129,5 @@
       "alt": "Kim \u2014 photo 2"
     }
   ],
-  "team-suki": [
-    {
-      "src": "/images/team/suki-1.jpg",
-      "alt": "Suki \u2014 photo 1"
-    },
-    {
-      "src": "/images/team/suki-2.jpg",
-      "alt": "Suki \u2014 photo 2"
-    },
-    {
-      "src": "/images/team/suki-3.jpg",
-      "alt": "Suki \u2014 photo 3"
-    }
-  ]
+  "team-eliza": []
 }

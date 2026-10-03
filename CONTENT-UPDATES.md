@@ -6,6 +6,6 @@ Spoil Me includes a 45-minute Swedish or deep tissue massage, a 20-minute body s
 
 Edit category wording and fallback photos in app/treatment-categories.js. Edit staff names and the seven-day roster in app/site-data.js. Tuesday includes Elizabeth, Kim and Warda (the screenshot partly covers Kim). Existing Elizabeth spelling is retained.
 
-Active staff: Ayasha, Warda, Bella, Elizabeth, Kim, Judy, Mona and Suki. Amira, Amy and Nazima are no longer listed or offered in the photo manager. Existing source image files are preserved. Photos provided in temp/staff were copied unchanged: Warda has three, Kim two and Suki three. Country labels embedded in the photos are not added as profile fields. Name and day links use /attendants#name anchors.
+Active staff: Ayasha, Warda, Bella, Elizabeth, Kim, Judy, Mona and Eliza. Eliza replaces Suki on Saturday and Sunday; each person is listed once per day. Eliza has a name placeholder until her photos are supplied. Suki is removed from the team and photo manager, and her three published photos and matching temp/staff source copies are removed. Amira, Amy and Nazima are no longer listed or offered in the photo manager. Other source image files are preserved. Warda has three photos, Kim two, Mona three, Ayasha two and Elizabeth two. Country labels embedded in the photos are not added as profile fields. Name and day links use /attendants#name anchors.
 
 Use local /manage-photos to replace category images or edit active staff galleries. Published images and app/photo-data.json must be committed and pushed.
