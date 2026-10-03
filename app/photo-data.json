@@ -33,6 +33,10 @@
     {
       "src": "/images/team/ayasha.jpg",
       "alt": "Ayasha portrait"
+    },
+    {
+      "src": "/images/team/ayasha-2.jpg",
+      "alt": "Ayasha - photo 2"
     }
   ],
   "team-bella": [
@@ -45,6 +49,10 @@
     {
       "src": "/images/team/elizabeth.jpg",
       "alt": "Elizabeth portrait"
+    },
+    {
+      "src": "/images/team/elizabeth-2.jpg",
+      "alt": "Elizabeth - photo 2"
     }
   ],
   "team-judy": [
@@ -57,6 +65,14 @@
     {
       "src": "/images/team/mona.jpeg",
       "alt": "Mona portrait"
+    },
+    {
+      "src": "/images/team/mona-2.jpg",
+      "alt": "Mona - photo 2"
+    },
+    {
+      "src": "/images/team/mona-3.jpg",
+      "alt": "Mona - photo 3"
     }
   ],
   "addon-body-scrub": [
