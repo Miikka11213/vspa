@@ -151,17 +151,16 @@ export const addons = [
 ];
 // Update the weekly roster here. Names must match the team list below.
 export const weeklySchedule = [
-  { day: "Monday", names: ["Ayasha", "Warda", "Bella"] },
-  { day: "Tuesday", names: ["Elizabeth", "Kim", "Warda"] },
+  { day: "Monday", names: ["Ayasha", "Bella"] },
+  { day: "Tuesday", names: ["Elizabeth", "Kim"] },
   { day: "Wednesday", names: ["Elizabeth", "Judy"] },
   { day: "Thursday", names: ["Elizabeth", "Kim", "Ayasha"] },
-  { day: "Friday", names: ["Ayasha", "Mona", "Warda"] },
+  { day: "Friday", names: ["Ayasha", "Mona"] },
   { day: "Saturday", names: ["Ayasha", "Eliza"] },
   { day: "Sunday", names: ["Eliza", "Bella", "Ayasha"] },
 ];
 export const team = [
   { name: "Ayasha", specialty: "Relaxation massage" },
-  { name: "Warda", specialty: "Spa team" },
   { name: "Bella", specialty: "Massage & spa care" },
   { name: "Elizabeth", specialty: "Massage & bodywork" },
   { name: "Kim", specialty: "Spa team" },
