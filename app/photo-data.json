@@ -103,5 +103,11 @@
       "src": "/images/team/eliza-portrait.jpg",
       "alt": "Eliza seated beneath pink blossoms"
     }
+  ],
+  "team-amira": [
+    {
+      "src": "/images/team/amira.png",
+      "alt": "Amira portrait"
+    }
   ]
 }
