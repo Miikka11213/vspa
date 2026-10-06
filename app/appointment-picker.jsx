@@ -68,7 +68,7 @@ export function AppointmentPicker() {
       </select>
       {category === "four-hand" && <p className="form-note">Two therapists treating one guest.</p>}
       {treatment.isPackage ? <fieldset className="booking-addons booking-package">
-        <legend>Included in your $399 package</legend>
+        <legend>Included in your $349 package</legend>
         <label htmlFor="booking-massage-style">Your 45-minute massage</label>
         <select id="booking-massage-style" value={massageStyle} onChange={e => setMassageStyle(e.target.value)}>{massageStyles.map(style => <option key={style}>{style}</option>)}</select>
         <label className="booking-addon"><input type="checkbox" checked disabled /><span>Body Scrub · 20 min</span><strong>Included</strong></label>
@@ -77,7 +77,8 @@ export function AppointmentPicker() {
           const addon = addons.find(item => item.slug === id);
           return <label className="booking-addon" key={id}><input type="radio" name="packageFinishing" value={id} checked={selected.includes(id)} onChange={() => setSelected(["body-scrub", id])} /><span>{addonLabel(addon)}{addon.durationMinutes ? ` · ${addon.durationMinutes} min` : ""}</span><strong>Included</strong></label>;
         })}
-        <p className="form-note">A soothing touch ritual completes your two-hour visit.</p>
+        {treatment.includedTreatments.map(label => <label className="booking-addon" key={label}><input type="checkbox" checked disabled /><span>{label}</span><strong>Included</strong></label>)}
+        <p className="form-note">Allow 2.5 hours for your complete visit.</p>
       </fieldset> : <fieldset className="booking-addons">
         <legend>Optional add-ons · charged once each</legend>
         {addons.map(a => <label className="booking-addon" key={a.slug}>
@@ -89,7 +90,7 @@ export function AppointmentPicker() {
         <div><span>{treatment.title} · {treatment.duration}</span><span>${treatment.price}</span></div>
         {treatment.isPackage && <div><span>{massageStyle} · 45 min</span><span>Included</span></div>}
         {extras.map(a => <div key={a.slug}><span>{treatment.isPackage ? addonLabel(a) : a.title}{a.durationMinutes ? ` · ${a.durationMinutes} min` : ""}</span><span>{treatment.isPackage ? "Included" : `$${a.price}`}</span></div>)}
-        {treatment.isPackage && <div><span>Soothing touch ritual</span><span>Included</span></div>}
+        {treatment.isPackage && treatment.includedTreatments.map(label => <div key={label}><span>{label}</span><span>Included</span></div>)}
         <div className="booking-total"><strong>{treatment.isPackage ? "Package price" : "Estimated price"}</strong><strong>${total} CAD{treatment.isPackage ? " / person" : ""}</strong></div>
       </div>
       <p className="form-note">{quote.note}</p>

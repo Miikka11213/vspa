@@ -224,7 +224,7 @@ export function Home() {
         <SectionTitle
           eyebrow="The art of slowing down"
           title="A treatment for your kind of day."
-          text="Find your ritual: botanical oil therapy, a synchronized four-hand treatment, or two hours of care with our Spoil Me package."
+          text="Find your ritual: botanical oil therapy, a synchronized four-hand treatment, or two and a half hours of care with our Spoil Me package."
           link="/services"
           label="All treatments"
         />
@@ -307,7 +307,7 @@ export function Services() {
     {treatmentCategories.map((category,index) => <section key={category.id} id={category.id} className="container section category-section">
       <SectionTitle eyebrow={"CATEGORY " + (index + 1)} title={category.title} text={category.description} />
       <ServiceCards items={category.options} />
-      <p className="note">{category.id === "spoil-me" ? "$399 per person for a two-hour visit. Your selected package treatments are included." : category.id === "four-hand" ? "Two therapists treating one guest. Choose 30, 45 or 60 minutes." : "Choose 30, 45 or 60 minutes of botanical oil care."}</p>
+      <p className="note">{category.id === "spoil-me" ? "$349 per person for a 2.5-hour visit. Your selected package treatments are included." : category.id === "four-hand" ? "Two therapists treating one guest. Choose 30, 45 or 60 minutes." : "Choose 30, 45 or 60 minutes of botanical oil care."}</p>
     </section>)}
     <section className="container section"><SectionTitle eyebrow="Finishing touches" title="A little extra care." text="Add body care or skincare to an individual massage. The Spoil Me package already includes its selected treatments." /><Addons /></section>
     <FAQs /><CTA />
@@ -456,7 +456,10 @@ export function Team() {
               <TeamGallery name={t.name} />
               <div>
                 <span className="eyebrow">SPA TEAM</span>
-                <h2>{t.name}</h2>
+                <h2 className="team-name">
+                  {t.name}
+                  {t.nationality && <span className="team-nationality">· {t.nationality}</span>}
+                </h2>
                 <p>{t.specialty}</p>
                 <p className="team-workdays">{weeklySchedule.filter(day => day.names.includes(t.name)).map(day => day.day.slice(0, 3)).join(" · ")}</p>
                 <a

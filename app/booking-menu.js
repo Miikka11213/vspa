@@ -19,7 +19,7 @@ export function getBookingQuote({ service: slug, addons: selected = [], massageS
     total: service.price + (service.isPackage ? 0 : extras.reduce((sum, item) => sum + item.price, 0)),
     durationMinutes: service.durationMinutes + (service.isPackage ? 0 : extras.reduce((sum, item) => sum + (item.durationMinutes || 0), 0)),
     note: service.isPackage
-      ? "Allow 2 hours. Selected treatments and a soothing touch ritual are included in the $399 per-person package."
+      ? "Allow 2.5 hours. Selected treatments, a 30-minute foot massage, singing bowl, hot stone, and a soothing touch ritual are included in the $349 per-person package."
       : "Add-ons extend the visit; staff will confirm the total appointment length and final price.",
   };
 }

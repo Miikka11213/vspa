@@ -53,7 +53,7 @@ export async function POST(request) {
     ...(service.categoryId === "four-hand" ? ["Therapists: 2, treating 1 guest"] : []),
     ...(service.isPackage ? [`Included massage: ${quote.massageStyle} — 45 min`] : []),
     ...extras.map(a => `${service.isPackage ? "Included treatment" : "Add-on (once)"}: ${service.isPackage ? addonLabel(a) : a.title}${a.durationMinutes ? ` — ${a.durationMinutes} min` : ""} — ${service.isPackage ? "Included" : `$${a.price} CAD`}`),
-    ...(service.isPackage ? ["Included: Soothing touch ritual"] : []),
+    ...(service.isPackage ? service.includedTreatments.map(label => `Included: ${label}`) : []),
     `${service.isPackage ? "Package price" : "Estimated price"}: $${total} CAD${service.isPackage ? " per person" : ""}`, quote.note, "", `Notes: ${notes || "None"}`, "", `Request reference: ${requestId}`, "This is a request, not a confirmed reservation. Reply to contact the customer."].join("\n");
   try {
     const result = await fetch("https://api.resend.com/emails", {

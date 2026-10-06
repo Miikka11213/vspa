@@ -39,12 +39,7 @@
       "alt": "Ayasha - photo 2"
     }
   ],
-  "team-bella": [
-    {
-      "src": "/images/team/bella.jpg",
-      "alt": "Bella portrait"
-    }
-  ],
+  "team-bella": [],
   "team-elizabeth": [
     {
       "src": "/images/team/elizabeth.jpg",
@@ -65,14 +60,6 @@
     {
       "src": "/images/team/mona.jpeg",
       "alt": "Mona portrait"
-    },
-    {
-      "src": "/images/team/mona-2.jpg",
-      "alt": "Mona - photo 2"
-    },
-    {
-      "src": "/images/team/mona-3.jpg",
-      "alt": "Mona - photo 3"
     }
   ],
   "addon-body-scrub": [
@@ -107,22 +94,14 @@
   ],
   "team-kim": [
     {
-      "src": "/images/team/kim-1.jpg",
-      "alt": "Kim \u2014 photo 1"
-    },
-    {
-      "src": "/images/team/kim-2.jpg",
-      "alt": "Kim \u2014 photo 2"
+      "src": "/images/team/kim-portrait.jpg",
+      "alt": "Kim by the waterfront at sunset"
     }
   ],
   "team-eliza": [
     {
-      "src": "/images/team/eliza-1.jpg",
-      "alt": "Eliza - photo 1"
-    },
-    {
-      "src": "/images/team/eliza-2.jpg",
-      "alt": "Eliza - photo 2"
+      "src": "/images/team/eliza-portrait.jpg",
+      "alt": "Eliza seated beneath pink blossoms"
     }
   ]
 }

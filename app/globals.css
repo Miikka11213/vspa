@@ -1673,6 +1673,18 @@ h2 {
 .team-card h2 {
   font-size: 1.6rem;
 }
+.team-card .team-name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.15em 0.45em;
+}
+.team-nationality {
+  color: var(--accent);
+  font-size: 0.7em;
+  font-weight: 400;
+  letter-spacing: normal;
+}
 .portrait-gallery {
   width: 100%;
   min-width: 0;

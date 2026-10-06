@@ -90,11 +90,12 @@ services.push(
   {
     slug: "spoil-me-package", categoryId: "spoil-me",
     photoSlot: "category-spoil-me", title: "Spoil Me Package",
-    duration: "2 hours", durationMinutes: 120, price: 399, isPackage: true,
+    duration: "2.5 hours", durationMinutes: 150, price: 349, isPackage: true,
     image: "/images/spa-still-life.png", alt: "Botanical oil, spa towels and orchids prepared for a relaxing spa visit",
-    description: "Two hours of thoughtful care, just for you. Enjoy your choice of Swedish or deep tissue massage, a body scrub, and either private shaving or a facial, with a soothing touch ritual to complete your visit.",
-    details: "Allow two hours for this $399 package, priced per person. Your visit includes a 45-minute Swedish or deep tissue massage, a 20-minute body scrub, and your choice of private shaving or a 20-minute facial. A calming touch ritual rounds out the experience. These treatments are included in the package price; our team will confirm the sequence and details before your visit.",
-    features: ["45-minute Swedish or deep tissue massage", "20-minute body scrub", "Choose private shaving or a 20-minute facial", "Soothing touch ritual", "2-hour visit · $399 per person"],
+    description: "Two and a half hours of thoughtful care, just for you. Enjoy your choice of Swedish or deep tissue massage, a body scrub, and either private shaving or a facial, plus a 30-minute foot massage, singing bowl, hot stone, and a soothing touch ritual.",
+    details: "Allow two and a half hours for this $349 package, priced per person. Your visit includes a 45-minute Swedish or deep tissue massage, a 20-minute body scrub, your choice of private shaving or a 20-minute facial, and a 30-minute foot massage. Singing bowl, hot stone, and a soothing touch ritual round out the experience. These treatments are included in the package price; our team will confirm the sequence and details before your visit.",
+    includedTreatments: ["30-minute foot massage", "Singing bowl", "Hot stone", "Soothing touch ritual"],
+    features: ["45-minute Swedish or deep tissue massage", "20-minute body scrub", "Choose private shaving or a 20-minute facial", "30-minute foot massage", "Singing bowl", "Hot stone", "Soothing touch ritual", "2.5-hour visit · $349 per person"],
   },
 );
 export const addons = [
@@ -116,7 +117,7 @@ export const addons = [
     title: "Facial",
     durationMinutes: 20,
     price: 30,
-    description: "Cleansing, exfoliation, a soothing mask and hydration.",
+    description: "Add a 20-minute facial to your massage: cleansing, exfoliation, a soothing mask and hydration.",
   },
   {
     slug: "back-shaving",
@@ -160,13 +161,13 @@ export const weeklySchedule = [
   { day: "Sunday", names: ["Eliza", "Bella", "Ayasha"] },
 ];
 export const team = [
-  { name: "Ayasha", specialty: "Relaxation massage" },
-  { name: "Bella", specialty: "Massage & spa care" },
-  { name: "Elizabeth", specialty: "Massage & bodywork" },
-  { name: "Kim", specialty: "Spa team" },
-  { name: "Judy", specialty: "Facials & grooming" },
-  { name: "Mona", specialty: "Relaxation & Swedish massage" },
-  { name: "Eliza", specialty: "Spa team" },
+  { name: "Ayasha", nationality: "Nepal", specialty: "Relaxation massage" },
+  { name: "Bella", nationality: "Bahamas", specialty: "Massage & spa care" },
+  { name: "Elizabeth", nationality: "Jamaica", specialty: "Massage & bodywork" },
+  { name: "Kim", nationality: "Brazilian", specialty: "Spa team" },
+  { name: "Judy", nationality: "Asian", specialty: "Facials & grooming" },
+  { name: "Mona", nationality: "Persian", specialty: "Relaxation & Swedish massage" },
+  { name: "Eliza", nationality: "Greece", specialty: "Spa team" },
 ];
 export const guides = [
   {
