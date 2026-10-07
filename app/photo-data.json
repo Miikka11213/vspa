@@ -98,7 +98,12 @@
       "alt": "Kim by the waterfront at sunset"
     }
   ],
-  "team-eliza": [],
+  "team-eliza": [
+    {
+      "src": "/images/team/eliza-flower-portrait.jpg",
+      "alt": "Eliza portrait with a pink flower overlay"
+    }
+  ],
   "team-amira": [
     {
       "src": "/images/team/amira.png",
