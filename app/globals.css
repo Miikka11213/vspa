@@ -2303,3 +2303,24 @@ h2 {
 .team-card .team-workdays { font-size: .8rem; color: var(--accent); letter-spacing: .03em; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
 @media (max-width: 600px) { .weekly-roster { padding: 20px 16px; } .weekly-roster tbody th { padding-right: 10px; font-size: .78rem; } .roster-names a { font-size: .72rem; padding: 5px 7px; } }
+
+/* Service planning and site-wide guide links. */
+.services-actions { margin-bottom: 32px; }
+.booking-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.booking-steps article { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 24px; }
+.booking-steps h3 { font-size: 1.25rem; margin-top: 12px; }
+.booking-steps p { color: var(--muted); }
+.footer-guides { display: flex; flex-wrap: wrap; gap: 12px 24px; padding-block: 24px; border-top: 1px solid var(--line); font-size: .85rem; }
+.footer-guides a:hover { color: var(--accent); }
+.booking-addon strong { text-align: right; overflow-wrap: anywhere; }
+.booking-layout > * { min-width: 0; }
+.appointment-menu .booking-addon.price-pending {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 6px 12px;
+}
+.booking-addon.price-pending input { grid-row: 1 / span 2; align-self: center; }
+.booking-addon.price-pending span,
+.booking-addon.price-pending strong { grid-column: 2; }
+.booking-addon.price-pending strong { margin-left: 0; text-align: left; white-space: normal; }
+@media (max-width: 700px) { .booking-steps { grid-template-columns: 1fr; } }

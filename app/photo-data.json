@@ -40,28 +40,9 @@
     }
   ],
   "team-bella": [],
-  "team-elizabeth": [
-    {
-      "src": "/images/team/elizabeth.jpg",
-      "alt": "Elizabeth portrait"
-    },
-    {
-      "src": "/images/team/elizabeth-2.jpg",
-      "alt": "Elizabeth - photo 2"
-    }
-  ],
-  "team-judy": [
-    {
-      "src": "/images/team/judy.jpg",
-      "alt": "Judy portrait"
-    }
-  ],
-  "team-mona": [
-    {
-      "src": "/images/team/mona.jpeg",
-      "alt": "Mona portrait"
-    }
-  ],
+  "team-elizabeth": [],
+  "team-judy": [],
+  "team-mona": [],
   "addon-body-scrub": [
     {
       "src": "/images/services/body-scrub.png",
@@ -78,12 +59,6 @@
     {
       "src": "/images/services/back-grooming.jpg",
       "alt": "A selection of razors and shaving brushes"
-    }
-  ],
-  "addon-intimate-shaving": [
-    {
-      "src": "/images/services/intimate-grooming.png",
-      "alt": "Personal grooming with a razor at the waistline"
     }
   ],
   "addon-full-body-shaving": [
@@ -104,10 +79,11 @@
       "alt": "Eliza portrait with a pink flower overlay"
     }
   ],
-  "team-amira": [
+  "team-amira": [],
+  "addon-body-grooming": [
     {
-      "src": "/images/team/amira.png",
-      "alt": "Amira portrait"
+      "src": "/images/services/back-grooming.jpg",
+      "alt": "Grooming tools prepared for a body-grooming appointment"
     }
   ]
 }

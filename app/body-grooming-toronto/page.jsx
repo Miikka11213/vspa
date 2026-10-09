@@ -1,9 +1,9 @@
 import { GuideDetail } from "../views";
 import guides from "../original-guides.json";
 
-const guide = guides.find((item) => item.path === "/toronto-adult-massage-guide");
+const guide = guides.find((item) => item.path === "/body-grooming-toronto");
 export const metadata = {
-  title: { absolute: "Adult Massage in Toronto: Discreet Guide | V Spa Toronto" },
+  title: { absolute: guide.seoTitle },
   description: guide.summary,
   alternates: { canonical: guide.path },
 };

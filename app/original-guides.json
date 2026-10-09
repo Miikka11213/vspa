@@ -1,109 +1,100 @@
 [
   {
-    "slug": "mens-intimate-spa",
-    "path": "/mens-intimate-spa",
-    "title": "Men's Spa and Grooming in Toronto",
-    "summary": "A guide to men's spa services in Toronto, including intimate grooming, body scrubs, facials, and discreet appointment planning at V Spa.",
+    "slug": "body-grooming-toronto",
+    "path": "/body-grooming-toronto",
+    "seoTitle": "Men’s & Women’s Body Grooming in Toronto | V Spa",
+    "eyebrow": "Body grooming & spa care",
+    "title": "Men’s & Women’s Body Grooming in Midtown Toronto",
+    "summary": "Professional body grooming for men and women in Midtown Toronto, with back, torso, arms, legs, full-body grooming, body scrubs, facials and private appointment planning.",
+    "intro": "Professional grooming should feel clear, comfortable and unhurried. Tell our team the result you want, the areas you would like groomed and any skin sensitivities. We will confirm the right appointment length, preparation and price before you arrive.",
     "sections": [
       [
-        "A calmer way to book men's spa services",
-        "Men's grooming can feel personal, so the booking process should feel clear and private. At V Spa, concierge helps confirm your appointment length, add-ons, and attendant availability before you arrive. You do not need to know every detail before contacting us. Share the result you want, such as smoother skin, a cleaner look, or a more relaxed evening, and we can guide the appointment from there."
+        "A simple way to plan your grooming visit",
+        "Body grooming is personal, so clear communication matters. You do not need to know every detail before contacting us. Tell our team whether you are interested in back, torso, arms, legs, full-body grooming, or a combination with massage, body scrub or facial care. We will help plan a comfortable appointment with clear boundaries and professional aftercare."
+      ],
+      [
+        "Back Grooming",
+        "For guests who want a cleaner, smoother back with careful preparation and aftercare."
+      ],
+      [
+        "Chest & Torso Grooming",
+        "A professional grooming option for the chest and torso, planned around skin sensitivity and desired finish."
+      ],
+      [
+        "Arms & Legs Grooming",
+        "Targeted grooming for arms, legs, or both, with preparation and aftercare appropriate to the skin."
+      ],
+      [
+        "Full-Body Grooming",
+        "A longer appointment for guests who want multiple body areas groomed in one visit."
+      ],
+      [
+        "Grooming + Spa Care",
+        "Combine grooming with a body scrub, facial or massage when you want a more complete spa visit."
       ],
       [
         "What to share before your appointment",
-        "Tell concierge if you want shaving, a body scrub, a facial, or a massage-focused visit. If you have sensitive skin, fragrance preferences, or areas to avoid, mention that early. Those details help the attendant prepare the right products, timing, and room setup so the appointment feels comfortable and unrushed."
+        [
+          "The areas you would like groomed.",
+          "Any sensitive skin, irritation, recent shaving, waxing or skin treatments.",
+          "Whether you prefer fragrance-free or extra-gentle products.",
+          "Whether you are pairing grooming with massage, a body scrub or facial.",
+          "Any areas you would like the attendant to avoid."
+        ]
       ],
       [
-        "How to choose the right length",
-        "A shorter appointment can work for focused grooming or a simple massage. If you want grooming and massage together, a longer visit usually feels better because the attendant has room to slow down. If you are booking before a date, event, or night out, contact concierge earlier in the day for the best choice of evening times."
+        "Do you offer body grooming for men and women?",
+        "Yes. V Spa offers professional body-grooming options for men and women. Tell our team which areas you would like groomed so we can confirm the right timing and price."
       ],
       [
-        "Privacy and comfort come first",
-        "A private spa appointment should feel respectful, clean, and easy to understand. You can ask questions before arrival, and you can speak up during the service if pressure, pacing, or product choice needs to change. The goal is to leave feeling smooth, relaxed, and confident without feeling like you had to guess your way through the experience."
-      ],
-      [
-        "Men's intimate shaving and grooming",
-        "A discreet grooming service for men who want a smooth, clean finish before plans, travel, or a confidence reset. Mention sensitivities and areas of focus when booking so the room and timing are prepared properly."
-      ],
-      [
-        "Body scrub and skin polish",
-        "A full-body exfoliating service helps clear buildup, soften rough areas, and leave the skin feeling fresher. It pairs best with a 45 or 60 minute massage so the visit does not feel rushed."
-      ],
-      [
-        "Men's facial reset",
-        "A gentle cleanse, exfoliation, and hydration service for male skin. It is a good choice if you want to calm the beard line, refresh tired skin, or leave looking more rested."
-      ],
-      [
-        "Massage paired with grooming",
-        "Many guests prefer to combine massage and grooming in one appointment. Concierge can help choose the right session length and add-ons based on how much time you have."
-      ],
-      [
-        "Before you book",
-        "• Choose whether you want grooming, massage, skincare, or a combination. • Mention skin sensitivities, fragrance preferences, and areas to avoid. • Book a longer appointment when pairing massage with add-ons. • Contact concierge early for evening or same-day availability."
-      ],
-      [
-        "Do you offer men's intimate grooming in Toronto?",
-        "Yes. V Spa offers discreet men's grooming and shaving add-ons that can be paired with massage or booked as part of a longer spa visit."
+        "Can I combine grooming with a massage?",
+        "Yes. Grooming may be paired with a suitable massage appointment. A longer booking is usually more comfortable when adding multiple services."
       ],
       [
         "Can I add a body scrub or facial?",
-        "Yes. Body scrubs and facials are available for men and can be added when you book. Longer appointments give the best pacing."
+        "Yes. Body scrubs and facials can be added when timing allows. Our team will confirm the total appointment length before your visit."
       ],
       [
-        "Is the booking private?",
-        "Yes. Appointments are confirmed through concierge, and you can share communication preferences before arrival."
+        "Is the appointment private?",
+        "Yes. Treatments are provided in private rooms. Share any comfort preferences or areas to avoid when booking so expectations are clear before the appointment."
       ],
       [
-        "What should I book before a night out?",
-        "A massage with a body scrub or grooming add-on is a strong choice when you want to leave refreshed, smoother, and ready for evening plans."
+        "What should I do before a grooming appointment?",
+        "Avoid irritating the skin immediately beforehand, and tell our team about sensitivity, recent skin treatments or any areas that should be avoided."
       ]
     ]
   },
   {
-    "slug": "toronto-adult-massage-guide",
-    "path": "/toronto-adult-massage-guide",
-    "title": "Adult Massage in Toronto: A Discreet Guest Guide",
-    "summary": "A discreet guide to adult massage in Toronto with private suites, body scrubs, facials, shaving add-ons, and concierge booking at V Spa.",
+    "slug": "massage-wellness-guide-toronto",
+    "path": "/massage-wellness-guide-toronto",
+    "seoTitle": "Massage & Wellness Guide in Toronto | V Spa",
+    "eyebrow": "Massage & wellness",
+    "title": "Massage & Wellness Guide in Toronto",
+    "summary": "Plan a massage, skincare or body-grooming visit in Midtown Toronto, with clear service choices, pricing and appointment confirmation.",
     "sections": [
       [
-        "A private spa visit without guesswork",
-        "Searching for adult massage in Toronto can feel uncertain when the results are mostly directories or classifieds. V Spa is built for guests who want the privacy of a discreet appointment with the comfort of a real spa setting. The experience starts with concierge confirmation. You can ask about timing, add-ons, and attendant availability before you arrive, so the visit feels clear from the first message."
+        "Choose your massage",
+        "Choose a 30, 45 or 60 minute massage for a shorter reset or a slower full-body visit. Share your preferred pressure and focus areas with our team. The Luxury 4-Hand Hot Stone & Oil Ritual is provided by two therapists treating one guest."
       ],
       [
-        "Massage, grooming, and skincare in one visit",
-        "A massage can be kept simple, or it can be paired with a body scrub, facial, or grooming service when you want to leave feeling more polished. Longer sessions are best when you want massage and add-ons together. If you have sensitivities, fragrance preferences, or areas you want to avoid, share them when booking. Those details help the attendant prepare the suite and keep the appointment comfortable."
+        "Add skincare or body grooming",
+        "Body scrubs, facials, back grooming, full-body grooming and other professional body-grooming options can be paired with a suitable appointment. Tell our team which areas you would like groomed so preparation, timing and price can be confirmed."
       ],
       [
-        "Why guests choose a spa instead of classifieds",
-        "Classified sites can show many options, but they often leave you to judge quality, hygiene, and communication on your own. A spa appointment gives you a cleaner path: clear services, a known location, and a team that can confirm details before arrival. V Spa is designed for guests who want privacy without confusion. The goal is simple: a calm appointment, a clean room, and an attendant who understands the kind of visit you are looking for."
+        "Plan a longer spa visit",
+        "The Spoil Me Package is $349 per person for 2.5 hours. It includes a 45-minute Swedish or deep tissue massage, a 20-minute body scrub, a body-grooming add-on or a 20-minute facial, a 30-minute foot massage, singing bowl, hot stone and a relaxing finishing ritual."
       ],
       [
-        "How to book discreetly",
-        "Share your preferred time, session length, and any add-ons with concierge. If you are booking for the evening, contact us earlier in the day so there is more room to match your schedule. Same-day visits are possible when attendants are available. If you have a preferred attendant or a specific service combination in mind, booking ahead is the better choice."
+        "Book with clear expectations",
+        "Call, text or send an appointment request with your preferred time, treatment and any add-ons. Our team will confirm availability, total appointment length and final price before your visit. An appointment request is not a confirmed reservation."
       ],
       [
-        "Before you book",
-        "• Choose the appointment length before contacting concierge. • Mention body scrub, facial, or shaving add-ons before arrival. • Share any privacy or communication preferences. • Book earlier for evening times and preferred attendants."
+        "Private rooms and professional care",
+        "Treatments take place in private rooms. Share comfort preferences, skin sensitivities and any areas to avoid before your appointment. You can ask to adjust pressure, pause or stop a treatment at any time."
       ],
       [
-        "What is adult massage in Toronto and is it discreet?",
-        "Adult massage at V Spa is a private spa experience built around relaxation, attentive touch, and clear booking. Guests are welcomed discreetly, confirm their preferred time with concierge, and settle into a private suite."
-      ],
-      [
-        "Do you offer facials, body scrubs, or body shaving?",
-        "Yes. Body scrubs, facials, back shaving, intimate shaving, and full body shaving can be added to the right massage appointment. Mention add-ons when booking so the timing feels calm."
-      ],
-      [
-        "Are evening or same-day appointments available?",
-        "Same-day and evening appointments may be available depending on attendant schedules. Contact concierge early for the best choice of time and add-ons."
-      ],
-      [
-        "How is V Spa different from classified listings?",
-        "Classified listings can vary widely. V Spa offers a consistent Midtown setting, private rooms, clear service descriptions, and concierge confirmation before you arrive."
-      ],
-      [
-        "Is this an escort service?",
-        "No. V Spa provides private adult spa and massage experiences in a professional environment with clear boundaries and attentive care."
+        "Visit V Spa in Midtown Toronto",
+        "Find us at 525 Eglinton Ave W, Second Floor. We are open daily from 10 AM to 9 PM. Call or text 647-857-1226 to confirm availability before travelling."
       ]
     ]
   }

@@ -24,7 +24,7 @@ export const services = [
     details:
       "Designed for busy days, this 30-minute treatment uses premium botanical oils and broad, flowing strokes. Share your preferred pressure and focus areas with your therapist for a restful pause that fits your day.",
     features: [
-      "Botanical oil touch ritual",
+      "Botanical oil massage",
       "Smooth, rhythmic massage strokes",
       "Pressure tailored to your comfort",
     ],
@@ -92,10 +92,10 @@ services.push(
     photoSlot: "category-spoil-me", title: "Spoil Me Package",
     duration: "2.5 hours", durationMinutes: 150, price: 349, isPackage: true,
     image: "/images/spa-still-life.png", alt: "Botanical oil, spa towels and orchids prepared for a relaxing spa visit",
-    description: "Two and a half hours of thoughtful care, just for you. Enjoy your choice of Swedish or deep tissue massage, a body scrub, and either private shaving or a facial, plus a 30-minute foot massage, singing bowl, hot stone, and a soothing touch ritual.",
-    details: "Allow two and a half hours for this $349 package, priced per person. Your visit includes a 45-minute Swedish or deep tissue massage, a 20-minute body scrub, your choice of private shaving or a 20-minute facial, and a 30-minute foot massage. Singing bowl, hot stone, and a soothing touch ritual round out the experience. These treatments are included in the package price; our team will confirm the sequence and details before your visit.",
-    includedTreatments: ["30-minute foot massage", "Singing bowl", "Hot stone", "Soothing touch ritual"],
-    features: ["45-minute Swedish or deep tissue massage", "20-minute body scrub", "Choose private shaving or a 20-minute facial", "30-minute foot massage", "Singing bowl", "Hot stone", "Soothing touch ritual", "2.5-hour visit · $349 per person"],
+    description: "Two and a half hours of thoughtful care, just for you. Enjoy your choice of Swedish or deep tissue massage, a body scrub, and either a body-grooming add-on or a facial, plus a 30-minute foot massage, singing bowl, hot stone, and a relaxing finishing ritual.",
+    details: "Allow two and a half hours for this $349 package, priced per person. Your visit includes a 45-minute Swedish or deep tissue massage, a 20-minute body scrub, your choice of a body-grooming add-on or a 20-minute facial, and a 30-minute foot massage. Singing bowl, hot stone, and a relaxing finishing ritual round out the experience. These treatments are included in the package price; our team will confirm the sequence and details before your visit.",
+    includedTreatments: ["30-minute foot massage", "Singing bowl", "Hot stone", "Relaxing finishing ritual"],
+    features: ["45-minute Swedish or deep tissue massage", "20-minute body scrub", "Choose a body-grooming add-on or a 20-minute facial", "30-minute foot massage", "Singing bowl", "Hot stone", "Relaxing finishing ritual", "2.5-hour visit · $349 per person"],
   },
 );
 export const addons = [
@@ -107,7 +107,8 @@ export const addons = [
     title: "Body Scrub",
     durationMinutes: 20,
     price: 25,
-    description: "Gentle exfoliation and warm towels for soft, refreshed skin.",
+    description: "Full-body exfoliation with gentle scrub and warm towels to remove surface buildup and leave skin smooth and refreshed.",
+    bestFor: "A pre-massage refresh and softer-feeling skin.",
   },
   {
     slug: "facials",
@@ -117,7 +118,8 @@ export const addons = [
     title: "Facial",
     durationMinutes: 20,
     price: 30,
-    description: "Add a 20-minute facial to your massage: cleansing, exfoliation, a soothing mask and hydration.",
+    description: "A restorative facial with cleansing, light exfoliation, a soothing mask and hydration for a calm, refreshed finish.",
+    bestFor: "Hydrating refresh and post-travel reset.",
   },
   {
     slug: "back-shaving",
@@ -127,17 +129,19 @@ export const addons = [
     title: "Back Grooming",
     price: 40,
     description:
-      "Careful skin preparation, back shaving and soothing aftercare.",
+      "Targeted grooming for the back with skin preparation, careful technique and aftercare for a clean, smooth finish.",
+    bestFor: "Guests who want a polished back-grooming service.",
   },
   {
-    slug: "intimate-shaving",
-    photoSlot: "addon-intimate-shaving",
-    image: "/images/services/intimate-grooming.png",
-    alt: "Personal grooming with a razor at the waistline",
-    title: "Intimate Grooming",
-    price: 55,
+    slug: "body-grooming",
+    photoSlot: "addon-body-grooming",
+    image: "/images/services/back-grooming.jpg",
+    alt: "Grooming tools prepared for a body-grooming appointment",
+    title: "Men’s & Women’s Body Grooming",
+    price: null,
     description:
-      "Personal grooming with clear boundaries, careful preparation and skin aftercare.",
+      "Professional body grooming in a clean, private treatment room. Tell our team which areas you would like groomed so we can confirm timing, preparation and price before your visit.",
+    bestFor: "Guests looking for discreet, professional body grooming with clear communication.",
   },
   {
     slug: "full-body-shaving",
@@ -147,7 +151,8 @@ export const addons = [
     title: "Full-Body Grooming",
     price: 220,
     description:
-      "A complete grooming session with skin preparation and aftercare. Confirm areas and appointment length when booking.",
+      "Comprehensive body grooming with preparation, careful technique and aftercare for a consistent, smooth finish.",
+    bestFor: "Guests who want a complete body-grooming appointment.",
   },
 ];
 // Update the weekly roster here. Names must match the team list below.
@@ -286,11 +291,22 @@ export const faq = [
     "Call or text 647-857-1226 with your preferred day, time and service. Your appointment is confirmed when our team replies.",
   ],
   [
-    "Can I add a facial or body scrub?",
-    "Yes. Mention any add-ons when you contact us so we can confirm the price and reserve enough time.",
+    "Do you offer add-ons like body scrubs or grooming?",
+    "Yes. Body scrubs, facials, back grooming, full-body grooming and other professional body-grooming options may be added to a suitable appointment. Mention your preferences when booking so our team can confirm timing and price.",
   ],
   [
     "Are same-day visits available?",
     "Availability changes throughout the day. Please call or text before travelling to the spa.",
   ],
+];
+
+export const footerGuideLinks = [
+  ["About V Spa", "/about"],
+  ["Contact & Directions, Toronto", "/contact"],
+  ["Massage & Wellness Guide, Toronto", "/massage-wellness-guide-toronto"],
+  ["Men’s & Women’s Body Grooming, Toronto", "/body-grooming-toronto"],
+  ["Choose the Right Massage, Toronto", "/guides/choosing-massage-toronto"],
+  ["Massage Add-Ons, Toronto", "/guides/massage-addons-toronto"],
+  ["Midtown Massage Spa Guide, Toronto", "/guides/midtown-toronto-massage-spa-guide"],
+  ["Evening Massage Toronto, Toronto", "/guides/evening-massage-toronto-after-work"],
 ];

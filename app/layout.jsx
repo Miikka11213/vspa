@@ -3,7 +3,7 @@ import path from "node:path";
 import { PhotoProvider, LocalPhotoLink } from "./photos";
 import "./globals.css";
 import { Header, Banner } from "./ui";
-import { business } from "./site-data";
+import { business, footerGuideLinks } from "./site-data";
 export const metadata = {
   metadataBase: new URL("https://vspa.ca"),
   title: {
@@ -60,6 +60,9 @@ export default async function RootLayout({ children }) {
                 <p>{business.hours}</p>
               </div>
             </div>
+            <nav className="container footer-guides" aria-label="Spa information and guides">
+              {footerGuideLinks.map(([label, href]) => <a key={href} href={href}>{label}</a>)}
+            </nav>
             <div className="container footer-bottom">
               <span>© {new Date().getFullYear()} V Spa.</span>
               <span>Massage · Skincare · Body care</span>

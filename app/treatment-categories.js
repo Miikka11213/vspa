@@ -14,7 +14,7 @@ export const treatmentCategories = [
   },
   {
     id: "spoil-me", title: "Spoil Me Package",
-    description: "Allow two and a half hours of care, just for you. Your $349 package includes a 45-minute Swedish or deep tissue massage, a 20-minute body scrub, either private shaving or a 20-minute facial, a 30-minute foot massage, singing bowl, hot stone, and a soothing touch ritual. Priced per person.",
+    description: "Allow two and a half hours of care, just for you. Your $349 package includes a 45-minute Swedish or deep tissue massage, a 20-minute body scrub, your choice of a body-grooming add-on or a 20-minute facial, a 30-minute foot massage, singing bowl, hot stone, and a relaxing finishing ritual. Priced per person.",
     photoSlot: "category-spoil-me", image: "/images/spa-still-life.png", alt: "Spa oils, folded towels and orchids in soft light",
   },
 ].map(category => ({ ...category, options: services.filter(service => service.categoryId === category.id) }));

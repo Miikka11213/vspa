@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { services, addons, business } from "./site-data";
 import { treatmentCategories } from "./treatment-categories";
-import { getBookingQuote, getBookingTimes, massageStyles, packageChoices, addonLabel } from "./booking-menu";
+import { getBookingQuote, getBookingTimes, massageStyles, packageChoices, addonLabel, addonPriceLabel } from "./booking-menu";
 
 export function AppointmentPicker() {
   const [ready, setReady] = useState(false);
@@ -81,17 +81,17 @@ export function AppointmentPicker() {
         <p className="form-note">Allow 2.5 hours for your complete visit.</p>
       </fieldset> : <fieldset className="booking-addons">
         <legend>Optional add-ons · charged once each</legend>
-        {addons.map(a => <label className="booking-addon" key={a.slug}>
+        {addons.map(a => <label className={`booking-addon${a.price == null ? " price-pending" : ""}`} key={a.slug}>
           <input type="checkbox" checked={selected.includes(a.slug)} onChange={e => setSelected(current => e.target.checked ? [...current, a.slug] : current.filter(id => id !== a.slug))} />
-          <span>{a.title}{a.durationMinutes ? ` · ${a.durationMinutes} min` : ""}</span><strong>+${a.price}</strong>
+          <span>{a.title}{a.durationMinutes ? ` · ${a.durationMinutes} min` : ""}</span><strong>{a.price == null ? addonPriceLabel(a) : `+$${a.price}`}</strong>
         </label>)}
       </fieldset>}
       <div className="booking-estimate" aria-live="polite" aria-atomic="true">
         <div><span>{treatment.title} · {treatment.duration}</span><span>${treatment.price}</span></div>
         {treatment.isPackage && <div><span>{massageStyle} · 45 min</span><span>Included</span></div>}
-        {extras.map(a => <div key={a.slug}><span>{treatment.isPackage ? addonLabel(a) : a.title}{a.durationMinutes ? ` · ${a.durationMinutes} min` : ""}</span><span>{treatment.isPackage ? "Included" : `$${a.price}`}</span></div>)}
+        {extras.map(a => <div key={a.slug}><span>{treatment.isPackage ? addonLabel(a) : a.title}{a.durationMinutes ? ` · ${a.durationMinutes} min` : ""}</span><span>{treatment.isPackage ? "Included" : addonPriceLabel(a)}</span></div>)}
         {treatment.isPackage && treatment.includedTreatments.map(label => <div key={label}><span>{label}</span><span>Included</span></div>)}
-        <div className="booking-total"><strong>{treatment.isPackage ? "Package price" : "Estimated price"}</strong><strong>${total} CAD{treatment.isPackage ? " / person" : ""}</strong></div>
+        <div className="booking-total"><strong>{treatment.isPackage ? "Package price" : quote.requiresPriceConfirmation ? "Known subtotal" : "Estimated price"}</strong><strong>${total} CAD{treatment.isPackage ? " / person" : ""}</strong></div>
       </div>
       <p className="form-note">{quote.note}</p>
       <label htmlFor="booking-name">Your name</label>
@@ -117,4 +117,3 @@ export function AppointmentPicker() {
     <a className="button secondary full" href={"tel:" + business.tel}>Call {business.phone}</a>
   </form>;
 }
-

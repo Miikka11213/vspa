@@ -1,3 +1,4 @@
+import { addonPriceLabel } from "./booking-menu";
 import { treatmentCategories } from "./treatment-categories";
 import originalGuides from "./original-guides.json";
 import { SitePhoto, TeamGallery, FeaturedTeam } from "./photos";
@@ -93,9 +94,10 @@ export function Addons({ items = addons }) {
           <div className="addon-copy">
             <h3>{s.title}</h3>
             <p>{s.description}</p>
+            {s.bestFor && <p className="addon-best-for"><strong>Best for:</strong> {s.bestFor}</p>}
           </div>
           <span className="addon-price">
-            ${s.price} <span aria-hidden="true">↗</span>
+            {addonPriceLabel(s)} <span aria-hidden="true">↗</span>
           </span>
         </a>
       ))}
@@ -302,14 +304,31 @@ export function Home() {
 }
 export function Services() {
   return <>
-    <PageIntro eyebrow="Massage & body care" title="Find your moment of calm." text="Explore three ways to slow down, reconnect and make time for yourself." />
-    <section className="container section compact"><CategoryCards /></section>
+    <PageIntro eyebrow="Massage & body care" title="Massage and body care in Midtown Toronto" text="Choose a massage shaped around how you want to feel. Our team combines attentive care, comfortable pacing and a calm private setting in Midtown Toronto. Add skincare or body-grooming services to create a visit that fits your time and preferences." />
+    <div className="container actions services-actions">
+      <a className="button" href="#massage-options">Explore massage options</a>
+      <a className="button secondary" href="/schedule">Check availability</a>
+    </div>
+    <section className="container section compact">
+      <SectionTitle eyebrow="Plan your visit" title="How to book an appointment" text="Choose the service, add any skincare or body-grooming options, then confirm the appointment directly with our team." />
+      <div className="booking-steps">
+        {[
+          ["01", "Choose the right amount of time", "Select a 30, 45, or 60 minute massage depending on how much time you want to relax and unwind."],
+          ["02", "Add a finishing touch", "Body scrub, facials, back grooming, full-body grooming and other body-grooming options can be paired with the right appointment length."],
+          ["03", "Confirm with our team", "Call, text, or send an appointment request. We will confirm staff availability, timing and add-ons before you arrive."],
+        ].map(([number, title, text]) => <article key={number}><span className="eyebrow">{number}</span><h3>{title}</h3><p>{text}</p></article>)}
+      </div>
+    </section>
+    <section id="massage-options" className="container section compact">
+      <SectionTitle eyebrow="Massage options" title="Choose the massage that fits your visit" text="Whether you want focused relief or a slower full-body experience, our massage options make it easy to choose the right pace before booking." />
+      <CategoryCards />
+    </section>
     {treatmentCategories.map((category,index) => <section key={category.id} id={category.id} className="container section category-section">
       <SectionTitle eyebrow={"CATEGORY " + (index + 1)} title={category.title} text={category.description} />
       <ServiceCards items={category.options} />
       <p className="note">{category.id === "spoil-me" ? "$349 per person for a 2.5-hour visit. Your selected package treatments are included." : category.id === "four-hand" ? "Two therapists treating one guest. Choose 30, 45 or 60 minutes." : "Choose 30, 45 or 60 minutes of botanical oil care."}</p>
     </section>)}
-    <section className="container section"><SectionTitle eyebrow="Finishing touches" title="A little extra care." text="Add body care or skincare to an individual massage. The Spoil Me package already includes its selected treatments." /><Addons /></section>
+    <section className="container section"><SectionTitle eyebrow="Finishing touches" title="Additional Services" text="Add body care or skincare to an individual massage. The Spoil Me package already includes its selected treatments." /><Addons /></section>
     <FAQs /><CTA />
   </>;
 }
@@ -364,7 +383,7 @@ export function ServiceDetail({ service: s }) {
         eyebrow={
           s.duration
             ? `${s.duration} · ${s.isPackage ? "Per person" : "From"} $${s.price}`
-            : `Body care · From $${s.price}`
+            : `Add-on · ${addonPriceLabel(s)}`
         }
         title={s.title + "."}
         text={s.description}
@@ -397,7 +416,7 @@ export function ServiceDetail({ service: s }) {
         <aside className="booking-panel">
           <span className="eyebrow">Your next appointment</span>
           <h2>{s.title}</h2>
-          <p className="price">{s.isPackage ? "Per person" : "From"} ${s.price}</p>
+          <p className="price">{s.price == null ? addonPriceLabel(s) : `${s.isPackage ? "Per person" : "From"} $${s.price}`}</p>
           <p>{s.duration || "Contact us to confirm treatment time"}</p>
           <a className="button full" href="/schedule">
             Check availability ↗
@@ -678,12 +697,12 @@ export function Guides() {
 export function GuideDetail({ guide: g }) {
   return (
     <>
-      <PageIntro eyebrow="The spa journal" title={g.title} text={g.summary} />
+      <PageIntro eyebrow={g.eyebrow || "The spa journal"} title={g.title} text={g.intro || g.summary} />
       <article className="container section compact prose narrow">
         {g.sections.map(([h, p]) => (
           <section key={h}>
             <h2>{h}</h2>
-            <p>{p}</p>
+            {Array.isArray(p) ? <ul>{p.map(item => <li key={item}>{item}</li>)}</ul> : <p>{p}</p>}
           </section>
         ))}
         <a className="text-link" href="/guides">

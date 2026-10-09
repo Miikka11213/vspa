@@ -1,4 +1,4 @@
-import { getBookingQuote, getBookingTimes, addonLabel } from "../../booking-menu.js";
+import { getBookingQuote, getBookingTimes, addonLabel, addonPriceLabel } from "../../booking-menu.js";
 import { createHash } from "node:crypto";
 export const runtime = "nodejs";
 const recipients = ["lytxmm10086@gmail.com", "vspa.help@gmail.com"];
@@ -52,9 +52,9 @@ export async function POST(request) {
   const text = ["NEW APPOINTMENT REQUEST — awaiting staff confirmation", "", `Name: ${name}`, `Email: ${email}`, `Phone: ${phone}`, `Preferred date: ${date}`, `Preferred time: ${time} (America/Toronto)`, "", `Treatment: ${service.title} — ${service.duration} — $${service.price} CAD${service.isPackage ? " per person" : ""}`,
     ...(service.categoryId === "four-hand" ? ["Therapists: 2, treating 1 guest"] : []),
     ...(service.isPackage ? [`Included massage: ${quote.massageStyle} — 45 min`] : []),
-    ...extras.map(a => `${service.isPackage ? "Included treatment" : "Add-on (once)"}: ${service.isPackage ? addonLabel(a) : a.title}${a.durationMinutes ? ` — ${a.durationMinutes} min` : ""} — ${service.isPackage ? "Included" : `$${a.price} CAD`}`),
+    ...extras.map(a => `${service.isPackage ? "Included treatment" : "Add-on (once)"}: ${service.isPackage ? addonLabel(a) : a.title}${a.durationMinutes ? ` — ${a.durationMinutes} min` : ""} — ${service.isPackage ? "Included" : a.price == null ? addonPriceLabel(a) : `$${a.price} CAD`}`),
     ...(service.isPackage ? service.includedTreatments.map(label => `Included: ${label}`) : []),
-    `${service.isPackage ? "Package price" : "Estimated price"}: $${total} CAD${service.isPackage ? " per person" : ""}`, quote.note, "", `Notes: ${notes || "None"}`, "", `Request reference: ${requestId}`, "This is a request, not a confirmed reservation. Reply to contact the customer."].join("\n");
+    `${service.isPackage ? "Package price" : quote.requiresPriceConfirmation ? "Known subtotal" : "Estimated price"}: $${total} CAD${service.isPackage ? " per person" : ""}`, quote.note, "", `Notes: ${notes || "None"}`, "", `Request reference: ${requestId}`, "This is a request, not a confirmed reservation. Reply to contact the customer."].join("\n");
   try {
     const result = await fetch("https://api.resend.com/emails", {
       method: "POST", signal: AbortSignal.timeout(15000),

@@ -72,5 +72,5 @@ The team portraits in `public/images/team/` were copied from the business's publ
 
 ## Original website URLs
 
-See URL-MIGRATION.md for the comparison against the original public website. The two restored top-level guides have their own app/mens-intimate-spa/page.jsx and app/toronto-adult-massage-guide/page.jsx entry files. Their article text is in app/original-guides.json. Their public URLs are unchanged, so redirects are unnecessary.
+See URL-MIGRATION.md for the comparison against the original public website. The body-grooming and massage-wellness guides have entry files at app/body-grooming-toronto/page.jsx and app/massage-wellness-guide-toronto/page.jsx. Their article text is in app/original-guides.json. Legacy guide and grooming URLs redirect permanently to their replacement pages; see next.config.mjs.
 
