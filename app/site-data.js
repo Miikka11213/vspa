@@ -162,8 +162,8 @@ export const weeklySchedule = [
   { day: "Wednesday", names: ["Eliza", "Amira", "Mona"] },
   { day: "Thursday", names: ["Kim", "Ayasha", "Eliza"] },
   { day: "Friday", names: ["Mona", "Ayasha"] },
-  { day: "Saturday", names: ["Amira", "Ayasha"] },
-  { day: "Sunday", names: ["Eliza", "Judy"] },
+  { day: "Saturday", names: ["Mona", "Eliza", "Ayasha"] },
+  { day: "Sunday", names: ["Eliza", "Amira", "Ayasha"] },
 ];
 export const team = [
   { name: "Amira", specialty: "Spa team" },
