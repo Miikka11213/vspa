@@ -2324,3 +2324,18 @@ h2 {
 .booking-addon.price-pending strong { grid-column: 2; }
 .booking-addon.price-pending strong { margin-left: 0; text-align: left; white-space: normal; }
 @media (max-width: 700px) { .booking-steps { grid-template-columns: 1fr; } }
+
+/* Room-fee labels and check-in notes remain understated beside the price. */
+.price-label { font: 14px Arial, sans-serif; color: var(--muted); }
+.payment-note { font: .75rem/1.5 Arial, sans-serif; color: var(--muted); margin: 6px 0 18px; }
+.suite-experience { font-size: .9rem; line-height: 1.5; color: var(--muted); margin: 10px 0; }
+.service-card .payment-note, .service-card .suite-experience { flex: none; }
+.service-card .payment-note { font-size: .75rem; margin: 10px 22px 22px; }
+.service-card .suite-experience { margin: 10px 22px 0; }
+.booking-panel .payment-note { font-size: .75rem; }
+.category-card .payment-note { margin: -10px 30px 24px; }
+.category-rate-price { display: inline-flex; align-items: baseline; gap: 8px; }
+.category-rate-price small { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.price-card .payment-note { margin-top: -10px; }
+.page-intro .suite-experience { font-size: .9rem; margin-top: 12px; }
+.booking-estimate .payment-note { font-size: .75rem; margin: 4px 0 14px; }

@@ -64,7 +64,7 @@ export function AppointmentPicker() {
       </select>
       <label htmlFor="booking-service">{treatment.isPackage ? "Package & duration" : "Treatment & duration"}</label>
       <select id="booking-service" value={service} onChange={e => chooseService(e.target.value)}>
-        {services.filter(item => item.categoryId === category).map(s => <option key={s.slug} value={s.slug}>{s.title} · {s.duration} · ${s.price}{s.isPackage ? " per person" : ""}</option>)}
+        {services.filter(item => item.categoryId === category).map(s => <option key={s.slug} value={s.slug}>{s.title} · {s.duration} · {s.isRoomFee ? "Room Fee " : ""}${s.price}{s.isPackage ? " per person" : ""}</option>)}
       </select>
       {category === "four-hand" && <p className="form-note">Two therapists treating one guest.</p>}
       {treatment.isPackage ? <fieldset className="booking-addons booking-package">
@@ -87,7 +87,9 @@ export function AppointmentPicker() {
         </label>)}
       </fieldset>}
       <div className="booking-estimate" aria-live="polite" aria-atomic="true">
-        <div><span>{treatment.title} · {treatment.duration}</span><span>${treatment.price}</span></div>
+        <div><span>{treatment.isRoomFee ? "Room Fee · " : ""}{treatment.title} · {treatment.duration}</span><span>${treatment.price}</span></div>
+        {treatment.suiteExperience && <p className="suite-experience">{treatment.suiteExperience}</p>}
+        {treatment.paymentNote && <p className="payment-note">{treatment.paymentNote}</p>}
         {treatment.isPackage && <div><span>{massageStyle} · 45 min</span><span>Included</span></div>}
         {extras.map(a => <div key={a.slug}><span>{treatment.isPackage ? addonLabel(a) : a.title}{a.durationMinutes ? ` · ${a.durationMinutes} min` : ""}</span><span>{treatment.isPackage ? "Included" : addonPriceLabel(a)}</span></div>)}
         {treatment.isPackage && treatment.includedTreatments.map(label => <div key={label}><span>{label}</span><span>Included</span></div>)}

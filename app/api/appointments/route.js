@@ -50,6 +50,8 @@ export async function POST(request) {
   if (entry.count >= 5 || attempts.size > 10000) return fail("Too many attempts. Please wait a few minutes or call us.", 429);
   entry.count++; attempts.set(key, entry);
   const text = ["NEW APPOINTMENT REQUEST — awaiting staff confirmation", "", `Name: ${name}`, `Email: ${email}`, `Phone: ${phone}`, `Preferred date: ${date}`, `Preferred time: ${time} (America/Toronto)`, "", `Treatment: ${service.title} — ${service.duration} — $${service.price} CAD${service.isPackage ? " per person" : ""}`,
+    ...(service.isRoomFee ? [`Room Fee: $${service.price} CAD (${service.paymentNote})`] : []),
+    ...(service.suiteExperience ? [service.suiteExperience] : []),
     ...(service.categoryId === "four-hand" ? ["Therapists: 2, treating 1 guest"] : []),
     ...(service.isPackage ? [`Included massage: ${quote.massageStyle} — 45 min`] : []),
     ...extras.map(a => `${service.isPackage ? "Included treatment" : "Add-on (once)"}: ${service.isPackage ? addonLabel(a) : a.title}${a.durationMinutes ? ` — ${a.durationMinutes} min` : ""} — ${service.isPackage ? "Included" : a.price == null ? addonPriceLabel(a) : `$${a.price} CAD`}`),

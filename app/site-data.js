@@ -17,7 +17,7 @@ export const services = [
     title: "Pure Serenity",
     duration: "30 min",
     durationMinutes: 30,
-    price: 120,
+    price: 50,
     image: "/images/services/focused.jpg",
     alt: "A relaxation massage with a wooden massage roller",
     description: "A botanical oil ritual for a quick, calming reset. Smooth, flowing strokes and rhythmic glides ease everyday tension and leave you feeling refreshed.",
@@ -36,7 +36,7 @@ export const services = [
     title: "Chrono-Relaxing",
     duration: "45 min",
     durationMinutes: 45,
-    price: 150,
+    price: 60,
     image: "/images/services/signature.jpg",
     alt: "Hands applying focused pressure during a back massage",
     description:
@@ -54,9 +54,10 @@ export const services = [
     categoryId: "body-rituals",
     photoSlot: "service-immersion",
     title: "Twilight Symphony",
+    suiteExperience: "60 Mins Private Suite Experience",
     duration: "60 min",
     durationMinutes: 60,
-    price: 160,
+    price: 80,
     image: "/images/services/immersion.jpg",
     alt: "A gentle shoulder treatment on a massage table",
     description:
@@ -73,9 +74,9 @@ export const services = [
 // New rituals join the existing service URLs, so previous links remain valid.
 services.push(
   ...[
-    { minutes: 30, price: 240 },
-    { minutes: 45, price: 280 },
-    { minutes: 60, price: 300 },
+    { minutes: 30, price: 80 },
+    { minutes: 45, price: 100 },
+    { minutes: 60, price: 140 },
   ].map(({ minutes, price }) => ({
     slug: `${minutes}-minute-four-hand-hot-stone-oil-ritual`,
     categoryId: "four-hand", photoSlot: "category-four-hand",
@@ -98,6 +99,13 @@ services.push(
     features: ["45-minute Swedish or deep tissue massage", "20-minute body scrub", "Choose a body-grooming add-on or a 20-minute facial", "30-minute foot massage", "Singing bowl", "Hot stone", "Relaxing finishing ritual", "2.5-hour visit · $349 per person"],
   },
 );
+// Individual session prices are room fees; package pricing remains separate.
+for (const service of services) {
+  if (!service.isPackage) {
+    service.isRoomFee = true;
+    service.paymentNote = "Paid to front desk at check-in";
+  }
+}
 export const addons = [
   {
     slug: "body-scrub",

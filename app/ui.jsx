@@ -107,9 +107,11 @@ export function ServiceSpotlight() {
       <div className="spotlight-copy">
         <div className="service-meta">
           <span>{item.duration}</span>
-          <span>From ${item.price}</span>
+          <span>{item.isPackage ? "Per person" : "Room Fee"} ${item.price}</span>
         </div>
         <h3>{item.title}</h3>
+        {item.suiteExperience && <p className="suite-experience">{item.suiteExperience}</p>}
+        {item.paymentNote && <p className="payment-note">{item.paymentNote}</p>}
         <p>{item.description}</p>
         <a className="text-link" href={"/services/" + item.slug}>
           Explore this massage <span aria-hidden="true">↗</span>

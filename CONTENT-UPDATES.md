@@ -1,6 +1,6 @@
 # Categories and team schedule
 
-The English menu follows the owner's October 2 Word document: Body Rituals & Therapy (30/45/60 minutes at $120/$150/$160), Luxury 4-Hand Hot Stone & Oil Ritual (30/45/60 minutes at $240/$280/$300; two therapists treating one guest), and Spoil Me Package ($349 per person, 2.5 hours). The original three massage URLs remain valid with the revised names and content.
+The English menu follows the owner's October 2 Word document: Body Rituals & Therapy (30/45/60 minutes at room fees of $50/$60/$80), Luxury 4-Hand Hot Stone & Oil Ritual (30/45/60 minutes at room fees of $80/$100/$140; two therapists treating one guest), and Spoil Me Package ($349 per person, 2.5 hours). The original three massage URLs remain valid with the revised names and content.
 
 Spoil Me includes a 45-minute Swedish or deep tissue massage, a 20-minute body scrub, and either a body-grooming add-on or a 20-minute facial, plus a 30-minute foot massage, singing bowl, hot stone, and a relaxing finishing ritual. The calculator defaults to Swedish massage and facial; the customer can change either choice. Included treatments never add separate charges. The server validates the same quote before generating the appointment email. Package start times end at 6:30 PM to fit the 2.5-hour visit before the 9 PM closing. Shared calculation rules are in app/booking-menu.js; meaningful price and mocked-email checks are in tests/booking-menu.test.mjs.
 
@@ -23,3 +23,5 @@ Current weekly roster (October 10, 2026):
 - Sunday: Eliza, Amira, Ayasha
 
 October 9 website revision: the owner confirmed general grooming is offered for back, chest/torso, arms, legs and full body. General grooming uses “Price confirmed when booking” because its starting price is unconfirmed. Non-package estimates show a known subtotal excluding that unpriced add-on; the booking email says the same. Spoil Me still includes either body grooming or facial for $349, with no separate finishing charge. The services page, guide articles, metadata, footer links and 301 redirects follow the owner’s VSPA Google Ads Website Compliance Revision v1.0 brief. Website edits do not certify or guarantee Google Ads approval.
+
+Individual session prices are room fees, paid to the front desk at check-in. Labels and payment notes use small text. The 60-minute single session keeps Twilight Symphony with the subtitle "60 Mins Private Suite Experience". All service prices, booking quotes and appointment emails use the October 10 room fees; Spoil Me remains $349 for 2.5 hours.

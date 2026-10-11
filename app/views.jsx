@@ -20,11 +20,12 @@ export function SectionTitle({ eyebrow, title, text, link, label }) {
     </div>
   );
 }
-export function PageIntro({ eyebrow, title, text }) {
+export function PageIntro({ eyebrow, title, text, subtitle }) {
   return (
     <div className="page-intro container">
       <span className="eyebrow">{eyebrow}</span>
       <h1>{title}</h1>
+      {subtitle && <p className="suite-experience">{subtitle}</p>}
       <p>{text}</p>
     </div>
   );
@@ -37,8 +38,9 @@ export function CategoryCards() {
       <h3>{category.title}</h3>
       <p>{category.description}</p>
       <ul className="category-rates" aria-label={category.title + " prices"}>
-        {category.options.map(option => <li key={option.slug}><span>{option.duration}{option.isPackage ? " · per person" : ""}</span><strong>${option.price}</strong></li>)}
+        {category.options.map(option => <li key={option.slug}><span>{option.duration}{option.isPackage ? " · per person" : ""}</span><span className="category-rate-price">{option.isRoomFee && <small>Room Fee:</small>}<strong>${option.price}</strong></span></li>)}
       </ul>
+      {category.options[0]?.paymentNote && <p className="payment-note">{category.options[0].paymentNote}</p>}
       <div className="card-bottom"><a href={"/services#" + category.id}>Explore this category <span aria-hidden="true">↗</span></a></div>
     </article>)}
   </div>;
@@ -71,15 +73,17 @@ export function ServiceCards({ items = services }) {
             <span className="pill">{s.duration}</span>
           </div>
           <h3>{s.title}</h3>
+          {s.suiteExperience && <p className="suite-experience">{s.suiteExperience}</p>}
           <p>{s.description}</p>
           <div className="card-bottom">
             <span>
-              {s.isPackage ? "Per person" : "From"} <strong>${s.price}</strong>
+              <small className="price-label">{s.isPackage ? "Per person" : "Room Fee:"}</small> <strong>${s.price}</strong>
             </span>
             <a aria-label={"Explore " + s.title} href={"/services/" + s.slug}>
               Explore <span aria-hidden="true">↗</span>
             </a>
           </div>
+          {s.paymentNote && <p className="payment-note">{s.paymentNote}</p>}
         </article>
       ))}
     </div>
@@ -346,9 +350,11 @@ export function Pricing() {
             <article className="price-card" key={s.slug}>
               <span className="eyebrow">{s.duration}</span>
               <h2>{s.title}</h2>
+              {s.suiteExperience && <p className="suite-experience">{s.suiteExperience}</p>}
               <div className="price">
-                <small>{s.isPackage ? "Per person" : "From"}</small> ${s.price}
+                <small>{s.isPackage ? "Per person" : "Room Fee:"}</small> ${s.price}
               </div>
+              {s.paymentNote && <p className="payment-note">{s.paymentNote}</p>}
               <ul>
                 {s.features.map((f) => (
                   <li key={f}>{f}</li>
@@ -382,10 +388,11 @@ export function ServiceDetail({ service: s }) {
       <PageIntro
         eyebrow={
           s.duration
-            ? `${s.duration} · ${s.isPackage ? "Per person" : "From"} $${s.price}`
+            ? `${s.duration} · ${s.isPackage ? "Per person" : "Room Fee:"} $${s.price}`
             : `Add-on · ${addonPriceLabel(s)}`
         }
         title={s.title + "."}
+        subtitle={s.suiteExperience}
         text={s.description}
       />
       <section className="container detail-layout section compact">
@@ -416,7 +423,9 @@ export function ServiceDetail({ service: s }) {
         <aside className="booking-panel">
           <span className="eyebrow">Your next appointment</span>
           <h2>{s.title}</h2>
-          <p className="price">{s.price == null ? addonPriceLabel(s) : `${s.isPackage ? "Per person" : "From"} $${s.price}`}</p>
+          {s.suiteExperience && <p className="suite-experience">{s.suiteExperience}</p>}
+          <div className="price">{s.price == null ? addonPriceLabel(s) : <><small>{s.isPackage ? "Per person" : s.isRoomFee ? "Room Fee:" : "From"}</small> ${s.price}</>}</div>
+          {s.paymentNote && <p className="payment-note">{s.paymentNote}</p>}
           <p>{s.duration || "Contact us to confirm treatment time"}</p>
           <a className="button full" href="/schedule">
             Check availability ↗

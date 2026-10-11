@@ -5,11 +5,11 @@ import { POST } from "../app/api/appointments/route.js";
 
 test("menu uses the owner's revised prices", () => {
   for (const [service, price] of [
-    ["30-minute-focused-relief-massage", 120], ["45-minute-signature-flow-massage", 150],
-    ["60-minute-total-immersion-massage", 160], ["30-minute-four-hand-hot-stone-oil-ritual", 240],
-    ["45-minute-four-hand-hot-stone-oil-ritual", 280], ["60-minute-four-hand-hot-stone-oil-ritual", 300],
+    ["30-minute-focused-relief-massage", 50], ["45-minute-signature-flow-massage", 60],
+    ["60-minute-total-immersion-massage", 80], ["30-minute-four-hand-hot-stone-oil-ritual", 80],
+    ["45-minute-four-hand-hot-stone-oil-ritual", 100], ["60-minute-four-hand-hot-stone-oil-ritual", 140],
   ]) assert.equal(getBookingQuote({ service, addons: [] }).total, price);
-  assert.equal(getBookingQuote({ service: "45-minute-signature-flow-massage", addons: ["body-scrub", "facials"] }).total, 205);
+  assert.equal(getBookingQuote({ service: "45-minute-signature-flow-massage", addons: ["body-scrub", "facials"] }).total, 115);
 });
 
 test("package keeps either finishing choice at $349 and 150 minutes", () => {
@@ -26,7 +26,7 @@ test("package keeps either finishing choice at $349 and 150 minutes", () => {
 
 test("unpriced body grooming preserves a known subtotal and requests price confirmation", () => {
   const quote = getBookingQuote({ service: "45-minute-signature-flow-massage", addons: ["body-scrub", "body-grooming"] });
-  assert.equal(quote.total, 175);
+  assert.equal(quote.total, 85);
   assert.equal(quote.durationMinutes, 65);
   assert.equal(quote.requiresPriceConfirmation, true);
   assert.match(quote.note, /subtotal excludes body grooming/);
@@ -46,8 +46,9 @@ test("grooming request email cannot present an unpriced add-on as free or a fina
     const request = new Request("http://localhost:3000/api/appointments", { method: "POST", headers: { origin: "http://localhost:3000", "content-type": "application/json", "x-forwarded-for": "grooming-test" }, body: JSON.stringify(input) });
     assert.equal((await POST(request)).status, 200);
     assert.match(email.text, /Men’s & Women’s Body Grooming — Price confirmed when booking/);
-    assert.match(email.text, /Known subtotal: \$150 CAD/);
+    assert.match(email.text, /Known subtotal: \$60 CAD/);
     assert.match(email.text, /subtotal excludes body grooming/);
+    assert.match(email.text, /Room Fee: \$60 CAD \(Paid to front desk at check-in\)/);
     assert.doesNotMatch(email.text, /\$null|\$0 CAD|Estimated price|Intimate|Private Shaving/);
   } finally {
     globalThis.fetch = originalFetch;
