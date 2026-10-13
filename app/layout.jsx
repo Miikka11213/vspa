@@ -4,6 +4,28 @@ import { PhotoProvider, LocalPhotoLink } from "./photos";
 import "./globals.css";
 import { Header, Banner } from "./ui";
 import { business, footerGuideLinks } from "./site-data";
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  "@id": "https://vspa.ca/#business",
+  name: business.name,
+  url: "https://vspa.ca/",
+  telephone: business.tel,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: business.address,
+    addressLocality: "Toronto",
+    addressRegion: "ON",
+    postalCode: "M5N 1B1",
+    addressCountry: "CA",
+  },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    opens: "10:00",
+    closes: "21:00",
+  },
+};
 export const metadata = {
   metadataBase: new URL("https://vspa.ca"),
   title: {
@@ -19,6 +41,10 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema).replace(/</g, "\\u003c") }}
+        />
         <PhotoProvider initialPhotos={initialPhotos}>
           <a className="skip-link" href="#main">
             Skip to content
