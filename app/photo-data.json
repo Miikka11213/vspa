@@ -46,7 +46,6 @@
       "alt": "Elizabeth portrait with a pink flower overlay"
     }
   ],
-  "team-judy": [],
   "team-mona": [
     {
       "src": "/images/team/mona-portrait.jpg",
@@ -89,7 +88,12 @@
       "alt": "Eliza portrait with a pink flower overlay"
     }
   ],
-  "team-amira": [],
+  "team-amira": [
+    {
+      "src": "/images/team/amira-portrait.jpg",
+      "alt": "Amira portrait with a butterfly overlay"
+    }
+  ],
   "addon-body-grooming": [
     {
       "src": "/images/services/back-grooming.jpg",
