@@ -168,12 +168,13 @@ export const weeklySchedule = [
   { day: "Monday", names: ["Eliza", "Ayasha", "Elizabeth"] },
   { day: "Tuesday", names: ["Eliza", "Elizabeth", "Judy"] },
   { day: "Wednesday", names: ["Eliza", "Mona"] },
-  { day: "Thursday", names: ["Kim", "Ayasha", "Eliza"] },
+  { day: "Thursday", names: ["Amira", "Ayasha", "Eliza", "Bahar"] },
   { day: "Friday", names: ["Mona", "Ayasha"] },
   { day: "Saturday", names: ["Mona", "Eliza", "Ayasha"] },
   { day: "Sunday", names: ["Eliza", "Amira", "Ayasha"] },
 ];
 export const team = [
+  { name: "Bahar", nationality: "Afghan", specialty: "Spa team" },
   { name: "Amira", specialty: "Spa team" },
   { name: "Ayasha", nationality: "Nepal", specialty: "Relaxation massage" },
   { name: "Bella", nationality: "Bahamas", specialty: "Massage & spa care" },
