@@ -40,9 +40,19 @@
     }
   ],
   "team-bella": [],
-  "team-elizabeth": [],
+  "team-elizabeth": [
+    {
+      "src": "/images/team/elizabeth-portrait.jpg",
+      "alt": "Elizabeth portrait with a pink flower overlay"
+    }
+  ],
   "team-judy": [],
-  "team-mona": [],
+  "team-mona": [
+    {
+      "src": "/images/team/mona-portrait.jpg",
+      "alt": "Mona portrait with a white flower overlay"
+    }
+  ],
   "addon-body-scrub": [
     {
       "src": "/images/services/body-scrub.png",
