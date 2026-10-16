@@ -1,3 +1,4 @@
+import { PageStructuredData } from "./structured-data";
 import { addonPriceLabel } from "./booking-menu";
 import { treatmentCategories } from "./treatment-categories";
 import originalGuides from "./original-guides.json";
@@ -385,6 +386,7 @@ export function Pricing() {
 export function ServiceDetail({ service: s }) {
   return (
     <>
+      <PageStructuredData item={s} kind="Service" />
       <PageIntro
         eyebrow={
           s.duration
@@ -706,6 +708,7 @@ export function Guides() {
 export function GuideDetail({ guide: g }) {
   return (
     <>
+      <PageStructuredData item={g} kind="Article" />
       <PageIntro eyebrow={g.eyebrow || "The spa journal"} title={g.title} text={g.intro || g.summary} />
       <article className="container section compact prose narrow">
         {g.sections.map(([h, p]) => (

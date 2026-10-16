@@ -29,3 +29,5 @@ October 13 search metadata update: all nine main pages now have individual meta 
 Individual session prices are room fees, paid to the front desk at check-in. Labels and payment notes use small text. The 60-minute single session keeps Twilight Symphony with the subtitle "60 Mins Private Suite Experience". All service prices, booking quotes and appointment emails use the October 10 room fees; Spoil Me remains $349 for 2.5 hours.
 
 October 16 SEO audit: kept public routes and the three existing 301s; added descriptive search titles while retaining visible treatment names. Converted five shared PNG delivery assets to WebP, preserving the originals. Owner-confirmed daily 10 AM–11 PM hours now match the website, metadata, business JSON-LD and booking cutoff (last 60-minute start 10 PM; last 2.5-hour package start 8:30 PM).
+
+October 16 structured-data restoration: service and add-on pages now describe their current Service and BreadcrumbList; guides describe Article and BreadcrumbList. No outdated FAQ answers, invented review scores, publication dates or full-treatment price claims are added.
