@@ -169,9 +169,9 @@ export const weeklySchedule = [
   { day: "Tuesday", names: ["Eliza", "Elizabeth"] },
   { day: "Wednesday", names: ["Eliza", "Mona"] },
   { day: "Thursday", names: ["Amira", "Ayasha", "Eliza", "Bahar"] },
-  { day: "Friday", names: ["Mona", "Ayasha"] },
-  { day: "Saturday", names: ["Mona", "Eliza", "Ayasha"] },
-  { day: "Sunday", names: ["Eliza", "Amira", "Ayasha"] },
+  { day: "Friday", names: ["Mona", "Kim", "Bahar"] },
+  { day: "Saturday", names: ["Sophia", "Eliza", "Ayasha"] },
+  { day: "Sunday", names: ["Elizabeth", "Sophia", "Amira"] },
 ];
 export const team = [
   { name: "Bahar", nationality: "Afghan", specialty: "Spa team" },
@@ -182,6 +182,7 @@ export const team = [
   { name: "Kim", nationality: "Brazilian", specialty: "Spa team" },
   { name: "Mona", nationality: "Persian", specialty: "Relaxation & Swedish massage" },
   { name: "Eliza", nationality: "Greece", specialty: "Spa team" },
+  { name: "Sophia", specialty: "Spa team" },
 ];
 export const guides = [
   {
