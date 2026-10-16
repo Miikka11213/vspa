@@ -27,7 +27,7 @@ export function PhotoProvider({ children, initialPhotos }) {
 }
 export function SitePhoto({
   slot,
-  fallback = "/images/spa-still-life.png",
+  fallback = "/images/spa-still-life.webp",
   alt = "",
   ...props
 }) {

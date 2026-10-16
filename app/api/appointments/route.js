@@ -41,7 +41,7 @@ export async function POST(request) {
   const today = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Toronto", year: "numeric", month: "2-digit", day: "2-digit" }).format(now);
   const currentTime = new Intl.DateTimeFormat("en-GB", { timeZone: "America/Toronto", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(now);
   const parsed = new Date(date + "T12:00:00Z");
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || Number.isNaN(parsed.getTime()) || parsed.toISOString().slice(0,10) !== date || date < today || parsed.getTime() > now.getTime() + 366 * 86400000 || !getBookingTimes(quote.durationMinutes).includes(time) || (date === today && time <= currentTime)) return fail("Choose a future date within the next year and a start time that fits your treatment before our 9 PM closing (Toronto).");
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || Number.isNaN(parsed.getTime()) || parsed.toISOString().slice(0,10) !== date || date < today || parsed.getTime() > now.getTime() + 366 * 86400000 || !getBookingTimes(quote.durationMinutes).includes(time) || (date === today && time <= currentTime)) return fail("Choose a future date within the next year and a start time that fits your treatment before our 11 PM closing (Toronto).");
   if (!process.env.RESEND_API_KEY || !process.env.BOOKING_FROM_EMAIL) return fail("Online requests are not available yet. Please call 647-857-1226 to book.", 503);
   const ip = request.headers.get("x-vercel-forwarded-for") || request.headers.get("x-forwarded-for") || "local";
   const key = createHash("sha256").update(ip).digest("hex");

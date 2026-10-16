@@ -1,13 +1,13 @@
 {
   "hero": [
     {
-      "src": "/images/spa-still-life.png",
+      "src": "/images/spa-still-life.webp",
       "alt": "Spa towels, massage oil and orchids"
     }
   ],
   "experience": [
     {
-      "src": "/images/spa-still-life.png",
+      "src": "/images/spa-still-life.webp",
       "alt": "Spa towels, massage oil and orchids"
     }
   ],
@@ -54,13 +54,13 @@
   ],
   "addon-body-scrub": [
     {
-      "src": "/images/services/body-scrub.png",
+      "src": "/images/services/body-scrub.webp",
       "alt": "Body scrub applied to the back during a spa treatment"
     }
   ],
   "addon-facials": [
     {
-      "src": "/images/services/facial.png",
+      "src": "/images/services/facial.webp",
       "alt": "A facial mask applied with a soft brush"
     }
   ],

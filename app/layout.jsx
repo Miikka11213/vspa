@@ -22,8 +22,8 @@ const businessSchema = {
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-    opens: "10:00",
-    closes: "21:00",
+    opens: `${business.openingHour}:00`,
+    closes: `${business.closingHour}:00`,
   },
 };
 export const metadata = {
@@ -33,7 +33,7 @@ export const metadata = {
     template: "%s | V Spa Toronto",
   },
   description:
-    "Massage, facials and body care in a quiet Midtown Toronto spa. Find us at 525 Eglinton Ave W. Open daily, 10 AM to 9 PM.",
+    "Massage, facials and body care in a quiet Midtown Toronto spa. Find us at 525 Eglinton Ave W. Open daily, 10 AM to 11 PM.",
   icons: { icon: "/icon.svg" },
 };
 export default async function RootLayout({ children }) {

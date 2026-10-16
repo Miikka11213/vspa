@@ -13,7 +13,7 @@ export function Header() {
     <header className="header">
       <div className="container header-inner">
         <a href="/" className="brand" aria-label="V Spa home">
-          <img src="/images/logo.png" alt="" width="45" height="45" />
+          <img src="/images/logo.webp" alt="" width="45" height="45" />
           <span>V Spa</span>
         </a>
         <nav className="desktop-nav" aria-label="Main navigation">

@@ -1,4 +1,4 @@
-import { services, addons } from "./site-data.js";
+import { services, addons, business } from "./site-data.js";
 
 export const massageStyles = ["Swedish Massage", "Deep Tissue Massage"];
 export const packageChoices = ["facials", "body-grooming"];
@@ -28,9 +28,11 @@ export function getBookingQuote({ service: slug, addons: selected = [], massageS
 }
 
 export function getBookingTimes(durationMinutes) {
-  const lastStart = Math.min(20 * 60, 21 * 60 - durationMinutes);
-  return Array.from({ length: Math.max(0, Math.floor((lastStart - 10 * 60) / 30) + 1) }, (_, index) => {
-    const minutes = 10 * 60 + index * 30;
+  const opens = business.openingHour * 60;
+  const closes = business.closingHour * 60;
+  const lastStart = Math.min(closes - 60, closes - durationMinutes);
+  return Array.from({ length: Math.max(0, Math.floor((lastStart - opens) / 30) + 1) }, (_, index) => {
+    const minutes = opens + index * 30;
     return `${Math.floor(minutes / 60)}:${String(minutes % 60).padStart(2, "0")}`;
   });
 }

@@ -19,9 +19,9 @@ test("package keeps either finishing choice at $349 and 150 minutes", () => {
     assert.equal(quote.durationMinutes, 150);
     assert.equal(quote.requiresPriceConfirmation, false);
     assert.deepEqual(quote.service.includedTreatments, ["30-minute foot massage", "Singing bowl", "Hot stone", "Relaxing finishing ritual"]);
-    assert.equal(getBookingTimes(quote.durationMinutes).at(-1), "18:30");
+    assert.equal(getBookingTimes(quote.durationMinutes).at(-1), "20:30");
   }
-  assert.equal(getBookingTimes(60).at(-1), "20:00");
+  assert.equal(getBookingTimes(60).at(-1), "22:00");
 });
 
 test("unpriced body grooming preserves a known subtotal and requests price confirmation", () => {
@@ -84,9 +84,9 @@ test("server email matches the fixed package quote without sending real mail", a
     assert.match(email.text, /Included: Hot stone/);
     assert.match(email.text, /Package price: \$349 CAD per person/);
     assert.doesNotMatch(email.text, /\$55|\$25|\$1 CAD/);
-    assert.equal((await POST(request({ ...input, time: "18:30" }))).status, 200);
-    assert.equal((await POST(request({ ...input, time: "19:00" }))).status, 400);
-    assert.equal((await POST(request({ ...input, time: "20:00" }))).status, 400);
+    assert.equal((await POST(request({ ...input, time: "20:30" }))).status, 200);
+    assert.equal((await POST(request({ ...input, time: "19:00" }))).status, 200);
+    assert.equal((await POST(request({ ...input, time: "21:00" }))).status, 400);
     assert.equal((await POST(request({ ...input, addons: ["body-scrub", "facials", "body-grooming"] }))).status, 400);
   } finally {
     globalThis.fetch = originalFetch;

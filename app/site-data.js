@@ -6,7 +6,9 @@ export const business = {
   email: "vspa.help@gmail.com",
   address: "525 Eglinton Ave W, Second Floor",
   city: "Toronto, ON M5N 1B1",
-  hours: "Daily, 10 AM – 9 PM",
+  hours: "Daily, 10 AM – 11 PM",
+  openingHour: 10,
+  closingHour: 23,
   map: "https://www.google.com/maps/search/?api=1&query=525+Eglinton+Ave+W+Toronto",
 };
 export const services = [
@@ -82,7 +84,7 @@ services.push(
     categoryId: "four-hand", photoSlot: "category-four-hand",
     title: "Luxury 4-Hand Hot Stone & Oil Ritual",
     duration: `${minutes} min`, durationMinutes: minutes, price,
-    image: "/images/services/four-hand-ritual.png",
+    image: "/images/services/four-hand-ritual.webp",
     alt: "Two therapists providing a synchronized four-hand massage to one guest",
     description: "Two therapists, one guest, and a perfectly shared rhythm. Synchronized oil massage and warming hot stones create an immersive experience of deep relaxation.",
     details: "Two therapists work together in a synchronized, flowing four-hand massage, combining premium botanical oils with the warmth of Himalayan volcanic hot stones. Coordinated strokes and thoughtful pressure make this a luxurious pause for body and mind. This is a treatment for one guest, served by two therapists.",
@@ -92,7 +94,7 @@ services.push(
     slug: "spoil-me-package", categoryId: "spoil-me",
     photoSlot: "category-spoil-me", title: "Spoil Me Package",
     duration: "2.5 hours", durationMinutes: 150, price: 349, isPackage: true,
-    image: "/images/spa-still-life.png", alt: "Botanical oil, spa towels and orchids prepared for a relaxing spa visit",
+    image: "/images/spa-still-life.webp", alt: "Botanical oil, spa towels and orchids prepared for a relaxing spa visit",
     description: "Two and a half hours of thoughtful care, just for you. Enjoy your choice of Swedish or deep tissue massage, a body scrub, and either a body-grooming add-on or a facial, plus a 30-minute foot massage, singing bowl, hot stone, and a relaxing finishing ritual.",
     details: "Allow two and a half hours for this $349 package, priced per person. Your visit includes a 45-minute Swedish or deep tissue massage, a 20-minute body scrub, your choice of a body-grooming add-on or a 20-minute facial, and a 30-minute foot massage. Singing bowl, hot stone, and a relaxing finishing ritual round out the experience. These treatments are included in the package price; our team will confirm the sequence and details before your visit.",
     includedTreatments: ["30-minute foot massage", "Singing bowl", "Hot stone", "Relaxing finishing ritual"],
@@ -110,7 +112,7 @@ export const addons = [
   {
     slug: "body-scrub",
     photoSlot: "addon-body-scrub",
-    image: "/images/services/body-scrub.png",
+    image: "/images/services/body-scrub.webp",
     alt: "Body scrub applied to the back during a spa treatment",
     title: "Body Scrub",
     durationMinutes: 20,
@@ -121,7 +123,7 @@ export const addons = [
   {
     slug: "facials",
     photoSlot: "addon-facials",
-    image: "/images/services/facial.png",
+    image: "/images/services/facial.webp",
     alt: "A facial mask applied with a soft brush",
     title: "Facial",
     durationMinutes: 20,
@@ -249,7 +251,7 @@ export const guides = [
     sections: [
       [
         "Evening appointments",
-        "The spa is open until 9 PM daily. Contact the team in advance to confirm the last available appointment for your chosen service.",
+        "The spa is open until 11 PM daily. Contact the team in advance to confirm the last available appointment for your chosen service.",
       ],
       [
         "Choose your session",
@@ -293,7 +295,7 @@ export const navigation = [
 export const faq = [
   [
     "Where is V Spa?",
-    "Find us at 525 Eglinton Ave W, Second Floor, in Midtown Toronto. We are open daily from 10 AM to 9 PM.",
+    "Find us at 525 Eglinton Ave W, Second Floor, in Midtown Toronto. We are open daily from 10 AM to 11 PM.",
   ],
   [
     "How do I book?",
