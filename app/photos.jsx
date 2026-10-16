@@ -37,7 +37,7 @@ export function SitePhoto({
     <img {...props} src={photo?.src || fallback} alt={photo?.alt || alt} />
   );
 }
-export function TeamGallery({ name }) {
+export function TeamGallery({ name, nationality }) {
   const photos = useContext(PhotoContext);
   const items = photos["team-" + name.toLowerCase()] || [];
   const [index, setIndex] = useState(0);
@@ -55,6 +55,7 @@ export function TeamGallery({ name }) {
       <div className="portrait-empty">
         <span>{name[0]}</span>
         <p>{name}</p>
+        {nationality && <small>{nationality}</small>}
       </div>
     );
   return (
@@ -161,6 +162,7 @@ export function FeaturedTeam() {
             ) : (
               <div className="portrait-empty">
                 <span>{t.name[0]}</span>
+                {t.nationality && <p>{t.nationality}</p>}
               </div>
             )}
             <div className="featured-person-caption">

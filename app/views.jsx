@@ -481,7 +481,7 @@ export function Team() {
               className="team-card"
               key={t.name}
             >
-              <TeamGallery name={t.name} />
+              <TeamGallery name={t.name} nationality={t.nationality} />
               <div>
                 <span className="eyebrow">SPA TEAM</span>
                 <h2 className="team-name">
