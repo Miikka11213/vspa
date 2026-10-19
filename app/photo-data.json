@@ -99,5 +99,11 @@
       "src": "/images/services/back-grooming.jpg",
       "alt": "Grooming tools prepared for a body-grooming appointment"
     }
+  ],
+  "team-bahar": [
+    {
+      "src": "/images/team/bahar-portrait.jpg",
+      "alt": "Bahar standing beside floral artwork"
+    }
   ]
 }

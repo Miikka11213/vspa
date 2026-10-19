@@ -31,3 +31,5 @@ Individual session prices are room fees, paid to the front desk at check-in. Lab
 October 16 SEO audit: kept public routes and the three existing 301s; added descriptive search titles while retaining visible treatment names. Converted five shared PNG delivery assets to WebP, preserving the originals. Owner-confirmed daily 10 AM–11 PM hours now match the website, metadata, business JSON-LD and booking cutoff (last 60-minute start 10 PM; last 2.5-hour package start 8:30 PM).
 
 October 16 structured-data restoration: service and add-on pages now describe their current Service and BreadcrumbList; guides describe Article and BreadcrumbList. No outdated FAQ answers, invented review scores, publication dates or full-treatment price claims are added.
+
+October 19 Bahar photo update: added the owner-provided photo unchanged at public/images/team/bahar-portrait.jpg to Bahar’s gallery. It is also used for her homepage team portrait.
