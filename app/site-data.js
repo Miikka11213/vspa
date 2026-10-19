@@ -167,13 +167,13 @@ export const addons = [
 ];
 // Update the weekly roster here. Names must match the team list below.
 export const weeklySchedule = [
-  { day: "Monday", names: ["Eliza", "Ayasha", "Elizabeth"] },
-  { day: "Tuesday", names: ["Eliza", "Elizabeth"] },
-  { day: "Wednesday", names: ["Eliza", "Mona"] },
-  { day: "Thursday", names: ["Amira", "Ayasha", "Eliza", "Bahar"] },
-  { day: "Friday", names: ["Mona", "Kim", "Bahar"] },
-  { day: "Saturday", names: ["Sophia", "Eliza", "Ayasha"] },
-  { day: "Sunday", names: ["Elizabeth", "Sophia", "Amira"] },
+  { day: "Monday", names: ["Ayasha", "Bahar", "Kim"] },
+  { day: "Tuesday", names: ["Bahar", "Elizabeth", "Judy"] },
+  { day: "Wednesday", names: ["Amira", "Elizabeth", "Bahar"] },
+  { day: "Thursday", names: ["Amira", "Bahar", "Kim"] },
+  { day: "Friday", names: ["Ayasha", "Elizabeth", "Bahar"] },
+  { day: "Saturday", names: ["Eliza", "Kim", "Ayasha"] },
+  { day: "Sunday", names: ["Amira", "Elizabeth", "Ayasha"] },
 ];
 export const team = [
   { name: "Bahar", nationality: "Afghanistan", specialty: "Spa team" },
@@ -182,6 +182,7 @@ export const team = [
   { name: "Bella", nationality: "Bahamas", specialty: "Massage & spa care" },
   { name: "Elizabeth", nationality: "Jamaica", specialty: "Massage & bodywork" },
   { name: "Kim", nationality: "Brazilian", specialty: "Spa team" },
+  { name: "Judy", nationality: "Asian", specialty: "Facials & grooming" },
   { name: "Mona", nationality: "Persian", specialty: "Relaxation & Swedish massage" },
   { name: "Eliza", nationality: "Greece", specialty: "Spa team" },
   { name: "Sophia", specialty: "Spa team" },
