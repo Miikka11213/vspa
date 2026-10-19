@@ -183,7 +183,6 @@ export const team = [
   { name: "Elizabeth", nationality: "Jamaica", specialty: "Massage & bodywork" },
   { name: "Kim", nationality: "Brazilian", specialty: "Spa team" },
   { name: "Judy", nationality: "Asian", specialty: "Facials & grooming" },
-  { name: "Mona", nationality: "Persian", specialty: "Relaxation & Swedish massage" },
   { name: "Eliza", nationality: "Greece", specialty: "Spa team" },
   { name: "Sophia", specialty: "Spa team" },
 ];
