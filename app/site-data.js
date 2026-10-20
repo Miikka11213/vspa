@@ -168,7 +168,7 @@ export const addons = [
 // Update the weekly roster here. Names must match the team list below.
 export const weeklySchedule = [
   { day: "Monday", names: ["Ayasha", "Bahar", "Kim"] },
-  { day: "Tuesday", names: ["Bahar", "Elizabeth", "Judy"] },
+  { day: "Tuesday", names: ["Bahar", "Eliza", "Judy"] },
   { day: "Wednesday", names: ["Amira", "Elizabeth", "Bahar"] },
   { day: "Thursday", names: ["Amira", "Bahar", "Kim"] },
   { day: "Friday", names: ["Ayasha", "Elizabeth", "Bahar"] },

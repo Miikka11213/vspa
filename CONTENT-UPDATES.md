@@ -12,10 +12,10 @@ Use local /manage-photos to replace category images or edit active staff galleri
 
 Facial is a 20-minute, $30 add-on to a massage and remains an included finishing choice in Spoil Me. The built-in ImageGen tool updated the embedded badge in public/images/services/facial.png from STANDALONE to ADD-ON.
 
-Current weekly roster (October 19, 2026):
+Current weekly roster (October 20, 2026):
 
 - Monday: Ayasha, Bahar, Kim
-- Tuesday: Bahar, Elizabeth, Judy
+- Tuesday: Bahar, Eliza, Judy
 - Wednesday: Amira, Elizabeth, Bahar
 - Thursday: Amira, Bahar, Kim
 - Friday: Ayasha, Elizabeth, Bahar
