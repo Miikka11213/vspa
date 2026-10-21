@@ -6,9 +6,9 @@ export const business = {
   email: "vspa.help@gmail.com",
   address: "525 Eglinton Ave W, Second Floor",
   city: "Toronto, ON M5N 1B1",
-  hours: "Daily, 10 AM – 11 PM",
+  hours: "Daily, 10 AM – 9 PM",
   openingHour: 10,
-  closingHour: 23,
+  closingHour: 21,
   map: "https://www.google.com/maps/search/?api=1&query=525+Eglinton+Ave+W+Toronto",
 };
 export const services = [
@@ -251,7 +251,7 @@ export const guides = [
     sections: [
       [
         "Evening appointments",
-        "The spa is open until 11 PM daily. Contact the team in advance to confirm the last available appointment for your chosen service.",
+        "The spa is open until 9 PM daily. Contact the team in advance to confirm the last available appointment for your chosen service.",
       ],
       [
         "Choose your session",
@@ -295,7 +295,7 @@ export const navigation = [
 export const faq = [
   [
     "Where is V Spa?",
-    "Find us at 525 Eglinton Ave W, Second Floor, in Midtown Toronto. We are open daily from 10 AM to 11 PM.",
+    "Find us at 525 Eglinton Ave W, Second Floor, in Midtown Toronto. We are open daily from 10 AM to 9 PM.",
   ],
   [
     "How do I book?",

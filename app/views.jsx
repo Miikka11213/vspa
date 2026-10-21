@@ -211,7 +211,7 @@ export function Home() {
                 <span>Private suites</span>
               </div>
               <div>
-                <strong>10 AM – 11 PM</strong>
+                <strong>10 AM – 9 PM</strong>
                 <span>Open every day</span>
               </div>
               <div>
@@ -453,7 +453,7 @@ export function Appointments() {
         <div>
           <div className="availability-note">
             <span className="eyebrow">OPEN EVERY DAY</span>
-            <h2>10 AM – 11 PM</h2>
+            <h2>10 AM – 9 PM</h2>
             <p>
               Call or text for current availability. Same-day visits may be
               available.
@@ -616,7 +616,7 @@ export function Contact() {
           <h2>
             Every day.
             <br />
-            10 AM – 11 PM.
+            10 AM – 9 PM.
           </h2>
           <p>Ask about daytime offers between 10 AM and 3 PM.</p>
         </div>

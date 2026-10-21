@@ -31,7 +31,7 @@ const pageDescriptions = {
   schedule: "Request an appointment at V Spa in Midtown Toronto. Check the weekly team schedule, choose your services and send your preferred day and time.",
   attendants: "Meet the V Spa team and see their scheduled days in Midtown Toronto. Contact us to confirm availability for your next massage or spa visit.",
   experience: "Discover V Spa's private treatment rooms and calm Midtown Toronto setting. Plan a visit for relaxation massage, skincare and body care.",
-  contact: "Find V Spa at 525 Eglinton Ave W, Second Floor, Toronto. Call or text 647-857-1226 for appointments. Open daily from 10 AM to 11 PM.",
+  contact: "Find V Spa at 525 Eglinton Ave W, Second Floor, Toronto. Call or text 647-857-1226 for appointments. Open daily from 10 AM to 9 PM.",
   about: "Learn about V Spa, a Midtown Toronto spa offering relaxation massage, skincare and professional body care in private treatment rooms.",
   hiring: "Explore opportunities to join the V Spa team in Midtown Toronto. Share your experience and availability through our application form.",
   guides: "Read V Spa's Toronto guides to choosing a massage, planning your appointment, body grooming, skincare add-ons and private spa rooms.",

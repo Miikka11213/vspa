@@ -25,7 +25,7 @@ export const guideSeo = {
   ],
   "evening-massage-toronto-after-work": [
     "Evening Massage in Toronto: Your After-Work Spa Visit",
-    "Plan an after-work massage in Midtown Toronto at V Spa, open daily until 11 PM. Contact us to confirm the right appointment time and treatment."
+    "Plan an after-work massage in Midtown Toronto at V Spa, open daily until 9 PM. Contact us to confirm the right appointment time and treatment."
   ],
   "private-spa-rooms-toronto-gta": [
     "Private Spa Rooms in Toronto: A First-Time Guest Guide",
