@@ -176,7 +176,7 @@ export const weeklySchedule = [
   { day: "Sunday", names: ["Amira", "Elizabeth", "Ayasha"] },
 ];
 export const team = [
-  { name: "Bahar", nationality: "Afghanistan", specialty: "Spa team" },
+  { name: "Bahar", nationality: "Persian", specialty: "Spa team" },
   { name: "Amira", nationality: "Morocco", specialty: "Spa team" },
   { name: "Ayasha", nationality: "Nepal", specialty: "Relaxation massage" },
   { name: "Bella", nationality: "Bahamas", specialty: "Massage & spa care" },
