@@ -1,7 +1,7 @@
 // Search wording is separate from the visible treatment names and card headings.
 export const pageSeoTitles = {
-  "services": "Massage Services in Toronto",
-  "pricing": "Massage & Spa Pricing in Toronto",
+  "services": "Massage & Spa Services on Eglinton West",
+  "pricing": "Massage Room Fees & Spa Package Prices",
   "attendants": "Massage Attendants in Midtown Toronto",
   "schedule": "Book a Massage in Toronto",
   "experience": "Massage Spa Experience in Midtown Toronto",

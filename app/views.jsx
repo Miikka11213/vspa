@@ -309,7 +309,7 @@ export function Home() {
 }
 export function Services() {
   return <>
-    <PageIntro eyebrow="Massage & body care" title="Massage and body care in Midtown Toronto" text="Choose a massage shaped around how you want to feel. Our team combines attentive care, comfortable pacing and a calm private setting in Midtown Toronto. Add skincare or body-grooming services to create a visit that fits your time and preferences." />
+    <PageIntro eyebrow="Midtown Toronto · Eglinton West" title="Massage & spa services on Eglinton West" text="Visit V Spa at 525 Eglinton Ave W, Second Floor, for a 30-, 45- or 60-minute relaxation massage, a four-hand hot stone and oil ritual, or our 2.5-hour Spoil Me package. Compare room fees and package prices below, then add a body scrub, facial or grooming service to suit your visit." />
     <div className="container actions services-actions">
       <a className="button" href="#massage-options">Explore massage options</a>
       <a className="button secondary" href="/schedule">Check availability</a>
@@ -342,8 +342,8 @@ export function Pricing() {
     <>
       <PageIntro
         eyebrow="Plan your visit"
-        title="Time well spent."
-        text="Straightforward options for a short reset or a slower, more complete spa visit."
+        title="Massage room fees & spa package prices"
+        text="Compare individual massage room fees, the Spoil Me package and body-care add-ons at V Spa on Eglinton West in Midtown Toronto. Room fees are paid to the front desk at check-in; confirm appointment details and any applicable charges before booking."
       />
       <section className="container section compact">
         <div className="price-grid">
@@ -393,14 +393,14 @@ export function ServiceDetail({ service: s }) {
             ? `${s.duration} · ${s.isPackage ? "Per person" : "Room Fee:"} $${s.price}`
             : `Add-on · ${addonPriceLabel(s)}`
         }
-        title={s.title + "."}
-        subtitle={s.suiteExperience}
+        title={s.seoTitle || s.title}
+        subtitle={[s.title, s.suiteExperience].filter(Boolean).join(" · ")}
         text={s.description}
       />
       <section className="container detail-layout section compact">
         <div className="prose">
           <SitePhoto className="treatment-detail-photo" slot={s.photoSlot} fallback={s.image} alt={s.alt} />
-          <h2>Made for your comfort.</h2>
+          <h2>What to expect from {s.title}</h2>
           <p>
             {s.details ||
               "Make space for a little extra care. Share your preferences and any skin sensitivities before your treatment. Our team will confirm the details, products and appointment length with you."}
@@ -413,11 +413,20 @@ export function ServiceDetail({ service: s }) {
             </ul>
           )}
           <h2>Before your visit</h2>
+          {s.bestFor && <p><strong>Best for:</strong> {s.bestFor}</p>}
           <p>
             Let us know if you would like to combine treatments. Availability
             and final pricing are confirmed directly with the spa before your
             appointment.
           </p>
+          <h2>Visit V Spa on Eglinton West</h2>
+          <p>
+            Find us at {business.address}, {business.city}. {business.hours}.
+            {" "}Choose your treatment and send a preferred day and time through our{" "}
+            <a href="/schedule">appointment request form</a>. Your appointment is
+            confirmed when our team replies. Walk-ins are welcome when available.
+          </p>
+          <p><a href="/contact">View directions and contact information</a> or <a href={"tel:" + business.tel}>call {business.phone}</a> to check availability.</p>
           <a className="text-link" href="/services">
             ← Back to all services
           </a>

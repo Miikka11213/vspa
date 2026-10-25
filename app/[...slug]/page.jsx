@@ -26,9 +26,9 @@ const pages = {
   guides: [Guides, "Spa Guides"],
 };
 const pageDescriptions = {
-  services: "Explore relaxation massage, facials and professional body grooming at V Spa in Midtown Toronto. View services and plan your visit at 525 Eglinton Ave W.",
-  pricing: "View V Spa's massage, spa package and body-care prices in Midtown Toronto. Choose your service and confirm appointment details with our team.",
-  schedule: "Request an appointment at V Spa in Midtown Toronto. Check the weekly team schedule, choose your services and send your preferred day and time.",
+  services: "Explore 30-, 45- and 60-minute massage, four-hand rituals and spa packages at V Spa, 525 Eglinton Ave W, Toronto. View room fees, add-ons and availability.",
+  pricing: "Compare V Spa's massage room fees, four-hand room fees, $349 spa package and add-on prices on Eglinton West, Toronto. View details before booking.",
+  schedule: "Request a V Spa appointment on Eglinton West, Toronto. Choose your service, check the staff schedule and send a preferred time. Open daily 10 AM–9 PM.",
   attendants: "Meet the V Spa team and see their scheduled days in Midtown Toronto. Contact us to confirm availability for your next massage or spa visit.",
   experience: "Discover V Spa's private treatment rooms and calm Midtown Toronto setting. Plan a visit for relaxation massage, skincare and body care.",
   contact: "Find V Spa at 525 Eglinton Ave W, Second Floor, Toronto. Call or text 647-857-1226 for appointments. Open daily from 10 AM to 9 PM.",
@@ -52,16 +52,12 @@ export async function generateMetadata({ params }) {
       : guides.find((g) => g.slug === slug[1]);
   const guide = slug[0] === "guides" ? guideSeo[slug[1]] : null;
   const serviceTitle = slug[0] === "services" && item
-    ? item.categoryId === "four-hand"
-      ? item.durationMinutes + "-Minute Four-Hand Hot Stone & Oil Massage in Toronto"
-      : item.categoryId === "body-rituals"
-        ? item.durationMinutes + "-Minute Relaxation Massage in Toronto"
-        : item.title + " in Toronto"
+    ? item.seoTitle || item.title + " in Toronto"
     : null;
   const title = slug.length === 1 ? pageSeoTitles[slug[0]] || pages[slug[0]]?.[1] : guide?.[0] || serviceTitle || item?.title;
   return {
     title: title || "Page not found",
-    description: guide?.[1] || item?.description || item?.summary || pageDescriptions[slug[0]],
+    description: guide?.[1] || item?.seoDescription || item?.description || item?.summary || pageDescriptions[slug[0]],
     alternates: { canonical: "/" + slug.join("/") },
   };
 }

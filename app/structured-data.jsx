@@ -6,7 +6,7 @@ export function PageStructuredData({ item, kind }) {
   const pathname = item.path || (isService ? "/services/" : "/guides/") + item.slug;
   const url = origin + pathname;
   const parent = isService ? ["Services", "/services"] : ["Spa guides", "/guides"];
-  const description = item.description || item.summary;
+  const description = item.seoDescription || item.description || item.summary;
   const data = [
     {
       "@context": "https://schema.org",
@@ -19,7 +19,7 @@ export function PageStructuredData({ item, kind }) {
       "@context": "https://schema.org",
       "@type": "Service",
       "@id": url + "#service",
-      name: item.title,
+      name: item.seoTitle || item.title,
       description,
       url,
       provider: { "@id": origin + "/#business" },
