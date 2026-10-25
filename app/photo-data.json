@@ -39,7 +39,12 @@
       "alt": "Ayasha - photo 2"
     }
   ],
-  "team-bella": [],
+  "team-bella": [
+    {
+      "src": "/images/team/bella-portrait.jpg",
+      "alt": "Bella wearing a blue top and denim shorts"
+    }
+  ],
   "team-elizabeth": [
     {
       "src": "/images/team/elizabeth-portrait.jpg",
