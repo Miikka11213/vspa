@@ -1,4 +1,5 @@
 import { PageStructuredData } from "./structured-data";
+import { guideSeo } from "./seo-metadata";
 import { addonPriceLabel } from "./booking-menu";
 import { treatmentCategories } from "./treatment-categories";
 import originalGuides from "./original-guides.json";
@@ -183,7 +184,7 @@ export function Home() {
             <span className="hero-location">
               Toronto | Peaceful massage escape
             </span>
-            <h1>Pure relaxation in Midtown Toronto</h1>
+            <h1>Relaxation massage in Midtown Toronto</h1>
             <h2>Attentive massage and body care in a calm, private setting.</h2>
             <p>
               Experience full-body relaxation and thoughtful care in private
@@ -455,8 +456,8 @@ export function Appointments() {
     <>
       <PageIntro
         eyebrow="Appointments"
-        title="Make a little time for yourself."
-        text="Tell us your preferred service and time. Our team will help you plan your visit."
+        title="Request a massage appointment in Midtown Toronto"
+        text="Choose a massage, four-hand ritual or spa package at V Spa on Eglinton West. Send your preferred service and time; our team will reply to confirm availability."
       />
       <section className="container section compact booking-layout">
         <div>
@@ -481,8 +482,8 @@ export function Team() {
     <>
       <PageIntro
         eyebrow="Our team"
-        title="A warm welcome awaits."
-        text="Get to know the names behind your spa experience. Contact us to confirm who is available for your preferred treatment."
+        title="Meet our Midtown Toronto spa team"
+        text="Meet the V Spa attendants at 525 Eglinton Ave W, Second Floor, Toronto. Check their scheduled days and contact us to confirm availability for massage, skincare or body-care services."
       />
       <section className="container section compact">
         <div className="team-grid">
@@ -532,8 +533,8 @@ export function Experience() {
     <>
       <PageIntro
         eyebrow="The V Spa experience"
-        title="Settle into a slower rhythm."
-        text="A private Midtown retreat, with thoughtful details from your first welcome to your last moment of quiet."
+        title="Your private spa experience in Midtown Toronto"
+        text="Discover V Spa's private treatment rooms on Eglinton West, with relaxation massage, facials and body care planned around your comfort and preferences."
       />
       <section className="container section compact experience-photo">
         <SitePhoto slot="experience" alt="V Spa experience" />
@@ -589,8 +590,8 @@ export function Contact() {
     <>
       <PageIntro
         eyebrow="Find your quiet corner"
-        title="Right here in Midtown."
-        text="We’re on Eglinton Avenue West, near Avenue Road. Call or text before visiting to confirm your appointment."
+        title="Contact V Spa on Eglinton West, Toronto"
+        text="Find our massage and body-care spa at 525 Eglinton Ave W, Second Floor, near Avenue Road in Midtown Toronto. Call or text before visiting to confirm your appointment."
       />
       <section className="container section compact contact-grid">
         <div className="contact-card">
@@ -639,7 +640,7 @@ export function About() {
     <>
       <PageIntro
         eyebrow="About V Spa"
-        title="A little calm in the city."
+        title="About our Midtown Toronto massage spa"
         text="Massage, skincare and body care in a private Midtown Toronto setting."
       />
       <section className="container section compact prose narrow">
@@ -678,8 +679,8 @@ export function Hiring() {
     <>
       <PageIntro
         eyebrow="Join our team"
-        title="Care is at the heart of what we do."
-        text="Interested in working with V Spa? Introduce yourself and tell us about your spa, skincare or hospitality experience."
+        title="Spa attendant jobs in Midtown Toronto"
+        text="Interested in joining V Spa at 525 Eglinton Ave W, Second Floor, Toronto? Share your spa, skincare or hospitality experience and availability. Contact us to discuss current openings."
       />
       <section className="container section compact booking-layout">
         <div className="prose">
@@ -704,8 +705,8 @@ export function Guides() {
     <>
       <PageIntro
         eyebrow="The spa journal"
-        title="A little guidance, before you go."
-        text="Simple reads to help you choose your treatment and feel comfortable on your first visit."
+        title="Massage & spa guides for your Toronto visit"
+        text="Plan your visit to V Spa on Eglinton West in Midtown Toronto. Read about massage options, body-care add-ons, private rooms and appointment preparation."
       />
       <section className="container section compact">
         <GuideCards />
@@ -718,7 +719,7 @@ export function GuideDetail({ guide: g }) {
   return (
     <>
       <PageStructuredData item={g} kind="Article" />
-      <PageIntro eyebrow={g.eyebrow || "The spa journal"} title={g.title} text={g.intro || g.summary} />
+      <PageIntro eyebrow={g.eyebrow || "The spa journal"} title={guideSeo[g.slug]?.[0] || g.title} text={g.intro || g.summary} />
       <article className="container section compact prose narrow">
         {g.sections.map(([h, p]) => (
           <section key={h}>
@@ -726,6 +727,10 @@ export function GuideDetail({ guide: g }) {
             {Array.isArray(p) ? <ul>{p.map(item => <li key={item}>{item}</li>)}</ul> : <p>{p}</p>}
           </section>
         ))}
+        {!g.path && <section>
+          <h2>Plan your visit to V Spa</h2>
+          <p>Visit us at {business.address}, {business.city}, for relaxation massage, skincare and body grooming. <a href="/services">Explore our current services</a>, then <a href="/contact">check directions and contact the spa</a> to plan your appointment.</p>
+        </section>}
         <a className="text-link" href="/guides">
           ← All guides
         </a>
