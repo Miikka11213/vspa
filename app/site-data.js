@@ -189,15 +189,15 @@ export const addons = [
 export const weeklySchedule = [
   { day: "Monday", names: ["Ayasha", "Bahar", "Kim"] },
   { day: "Tuesday", names: ["Bahar", "Eliza", "Judy"] },
-  { day: "Wednesday", names: ["Amira", "Elizabeth", "Bahar"] },
-  { day: "Thursday", names: ["Amira", "Bahar", "Kim"] },
+  { day: "Wednesday", names: ["Diamond", "Elizabeth", "Bahar"] },
+  { day: "Thursday", names: ["Diamond", "Bahar", "Kim"] },
   { day: "Friday", names: ["Ayasha", "Elizabeth", "Bahar", "Eliza"] },
   { day: "Saturday", names: ["Eliza", "Kim", "Ayasha"] },
-  { day: "Sunday", names: ["Amira", "Elizabeth", "Ayasha", "Bella"] },
+  { day: "Sunday", names: ["Diamond", "Elizabeth", "Ayasha", "Bella"] },
 ];
 export const team = [
   { name: "Bahar", nationality: "Persian", specialty: "Spa team" },
-  { name: "Amira", nationality: "Morocco", specialty: "Spa team" },
+  { name: "Diamond", specialty: "Spa team" },
   { name: "Ayasha", nationality: "Nepal", specialty: "Relaxation massage" },
   { name: "Bella", nationality: "Bahamas", specialty: "Massage & spa care" },
   { name: "Elizabeth", nationality: "Jamaica", specialty: "Massage & bodywork" },
