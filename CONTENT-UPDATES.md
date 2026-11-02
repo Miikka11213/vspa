@@ -35,3 +35,5 @@ October 16 structured-data restoration: service and add-on pages now describe th
 October 19 Bahar photo update: added the owner-provided photo unchanged at public/images/team/bahar-portrait.jpg to Bahar’s gallery. It is also used for her homepage team portrait.
 
 October 19 Mona departure: removed Mona from the team page, homepage team list and photo manager. She was already absent from the weekly roster. Her gallery entry and public portrait were removed; a local archive copy is preserved outside the website checkout.
+
+November 2 Monday roster update: added Eliza alongside Ayasha, Bahar and Kim. Other days follow the existing roster in app/site-data.js.
