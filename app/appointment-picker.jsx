@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { services, addons, business } from "./site-data";
 import { treatmentCategories } from "./treatment-categories";
+import { trackAppointmentRequest } from "./google-ads";
 import { getBookingQuote, getBookingTimes, massageStyles, packageChoices, addonLabel, addonPriceLabel } from "./booking-menu";
 
 export function AppointmentPicker() {
@@ -46,6 +47,7 @@ export function AppointmentPicker() {
       });
       const result = await response.json();
       if (!response.ok) throw new Error(result.error || "Unable to send. Please call the spa.");
+      trackAppointmentRequest(result, requestKey.current.id);
       setSent(true);
       setStatus("Request sent — awaiting confirmation. Our team will contact you to confirm availability and the details. No payment has been taken.");
     } catch (error) {

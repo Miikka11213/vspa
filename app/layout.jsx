@@ -3,6 +3,7 @@ import path from "node:path";
 import { PhotoProvider, LocalPhotoLink } from "./photos";
 import "./globals.css";
 import { Header, Banner } from "./ui";
+import { GoogleAdsTag } from "./google-ads-tag";
 import { business, footerGuideLinks } from "./site-data";
 const businessSchema = {
   "@context": "https://schema.org",
@@ -41,6 +42,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <GoogleAdsTag />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema).replace(/</g, "\\u003c") }}
