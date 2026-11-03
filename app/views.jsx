@@ -184,12 +184,12 @@ export function Home() {
             <span className="hero-location">
               Toronto | Peaceful massage escape
             </span>
-            <h1>Relaxation massage in Midtown Toronto</h1>
+            <h1>Massage spa in Midtown Toronto</h1>
             <h2>Attentive massage and body care in a calm, private setting.</h2>
             <p>
-              Experience full-body relaxation and thoughtful care in private
-              suites. Choose your preferred massage, and settle into a quiet
-              moment on Eglinton.
+              Book a private relaxation massage at V Spa on Eglinton Avenue
+              West, near Avenue Road. Explore full-body oil massage, four-hand
+              hot stone rituals and spa packages in a quiet, private suite.
             </p>
             <div className="actions">
               <a className="button" href="/schedule">
@@ -252,14 +252,13 @@ export function Home() {
         <div className="container experience-split">
           <div>
             <span className="eyebrow">The V Spa experience</span>
-            <h2>
-              Quiet details.
-              <br />
-              <em>A lasting difference.</em>
-            </h2>
+            <h2>Private massage suites on Eglinton West</h2>
             <p>
-              A warm welcome. A room prepared for your comfort. Care that begins
-              with listening to what you need.
+              Looking for a spa in Midtown Toronto? Visit our second-floor
+              massage spa at 525 Eglinton Ave W. Choose your preferred pressure
+              and treatment length, then unwind in a private room prepared for
+              your comfort. Open every day from 10 AM to 9 PM; walk-ins are
+              welcome when available.
             </p>
             <a className="text-link" href="/experience">
               Step inside the experience ↗
@@ -310,7 +309,7 @@ export function Home() {
 }
 export function Services() {
   return <>
-    <PageIntro eyebrow="Midtown Toronto · Eglinton West" title="Massage & spa services on Eglinton West" text="Visit V Spa at 525 Eglinton Ave W, Second Floor, for a 30-, 45- or 60-minute relaxation massage, a four-hand hot stone and oil ritual, or our 2.5-hour Spoil Me package. Compare room fees and package prices below, then add a body scrub, facial or grooming service to suit your visit." />
+    <PageIntro eyebrow="Midtown Toronto · Eglinton West" title="Private massage & spa services on Eglinton West" text="Visit our Midtown Toronto massage spa at 525 Eglinton Ave W, Second Floor, near Avenue Road. Choose a 30-, 45- or 60-minute relaxation massage in a private suite, a four-hand hot stone and oil ritual, or our 2.5-hour Spoil Me package. Compare room fees and package prices below, then add a body scrub, facial or grooming service to suit your visit." />
     <div className="container actions services-actions">
       <a className="button" href="#massage-options">Explore massage options</a>
       <a className="button secondary" href="/schedule">Check availability</a>
@@ -420,9 +419,9 @@ export function ServiceDetail({ service: s }) {
             and final pricing are confirmed directly with the spa before your
             appointment.
           </p>
-          <h2>Visit V Spa on Eglinton West</h2>
+          <h2>Visit our Midtown Toronto massage spa</h2>
           <p>
-            Find us at {business.address}, {business.city}. {business.hours}.
+            Find V Spa on Eglinton West near Avenue Road, at {business.address}, {business.city}. {business.hours}.
             {" "}Choose your treatment and send a preferred day and time through our{" "}
             <a href="/schedule">appointment request form</a>. Your appointment is
             confirmed when our team replies. Walk-ins are welcome when available.
@@ -534,7 +533,7 @@ export function Experience() {
       <PageIntro
         eyebrow="The V Spa experience"
         title="Your private spa experience in Midtown Toronto"
-        text="Discover V Spa's private treatment rooms on Eglinton West, with relaxation massage, facials and body care planned around your comfort and preferences."
+        text="Relax in a private massage suite at V Spa on Eglinton West, near Avenue Road in Midtown Toronto. Choose relaxation massage, a four-hand hot stone ritual, facials or body care planned around your comfort and preferences."
       />
       <section className="container section compact experience-photo">
         <SitePhoto slot="experience" alt="V Spa experience" />

@@ -315,7 +315,11 @@ export const navigation = [
 export const faq = [
   [
     "Where is V Spa?",
-    "Find us at 525 Eglinton Ave W, Second Floor, in Midtown Toronto. We are open daily from 10 AM to 9 PM.",
+    "Our massage spa is at 525 Eglinton Ave W, Second Floor, near Avenue Road in Midtown Toronto. We are open daily from 10 AM to 9 PM. Check our contact page for directions and call or text if you need help finding the entrance.",
+  ],
+  [
+    "Can I book a massage in a private suite?",
+    "Yes. V Spa offers private treatment suites for relaxation massage and body care. Choose a 30-, 45- or 60-minute massage, a four-hand hot stone and oil ritual, or a spa package. Tell our team your preferred service and time so we can confirm availability and pricing.",
   ],
   [
     "How do I book?",

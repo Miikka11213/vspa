@@ -26,11 +26,11 @@ const pages = {
   guides: [Guides, "Spa Guides"],
 };
 const pageDescriptions = {
-  services: "Explore 30-, 45- and 60-minute massage, four-hand rituals and spa packages at V Spa, 525 Eglinton Ave W, Toronto. View room fees, add-ons and availability.",
+  services: "Explore private relaxation massage, four-hand hot stone massage and spa packages at V Spa on Eglinton West, Midtown Toronto. View room fees and add-ons.",
   pricing: "Compare V Spa's massage room fees, four-hand room fees, $349 spa package and add-on prices on Eglinton West, Toronto. View details before booking.",
-  schedule: "Request a V Spa appointment on Eglinton West, Toronto. Choose your service, check the staff schedule and send a preferred time. Open daily 10 AM–9 PM.",
+  schedule: "Book a private massage or spa package at V Spa, 525 Eglinton Ave W, Toronto. Check the staff schedule and request a time. Open daily 10 AM–9 PM.",
   attendants: "Meet the V Spa team and see their scheduled days in Midtown Toronto. Contact us to confirm availability for your next massage or spa visit.",
-  experience: "Discover V Spa's private treatment rooms and calm Midtown Toronto setting. Plan a visit for relaxation massage, skincare and body care.",
+  experience: "Discover private massage suites at V Spa on Eglinton West in Midtown Toronto. Plan a quiet spa visit for relaxation massage, facials and body care.",
   contact: "Find V Spa at 525 Eglinton Ave W, Second Floor, Toronto. Call or text 647-857-1226 for appointments. Open daily from 10 AM to 9 PM.",
   about: "Learn about V Spa, a Midtown Toronto spa offering relaxation massage, skincare and professional body care in private treatment rooms.",
   hiring: "Explore opportunities to join the V Spa team in Midtown Toronto. Share your experience and availability through our application form.",

@@ -30,11 +30,11 @@ const businessSchema = {
 export const metadata = {
   metadataBase: new URL("https://vspa.ca"),
   title: {
-    default: "V Spa Toronto | Your Midtown Massage Retreat",
+    default: "V Spa Toronto | Massage Spa & Private Suites on Eglinton West",
     template: "%s | V Spa Toronto",
   },
   description:
-    "Massage, facials and body care in a quiet Midtown Toronto spa. Find us at 525 Eglinton Ave W. Open daily, 10 AM to 9 PM.",
+    "Visit V Spa, a massage spa at 525 Eglinton Ave W in Midtown Toronto. Private massage suites, four-hand hot stone rituals, facials and body care. Open daily 10 AM–9 PM.",
   icons: { icon: "/icon.svg" },
 };
 export default async function RootLayout({ children }) {
