@@ -191,7 +191,7 @@ export const weeklySchedule = [
   { day: "Tuesday", names: ["Bahar", "Eliza", "Judy"] },
   { day: "Wednesday", names: ["Diamond", "Elizabeth", "Bahar"] },
   { day: "Thursday", names: ["Diamond", "Bahar", "Kim"] },
-  { day: "Friday", names: ["Ayasha", "Elizabeth", "Bahar", "Eliza"] },
+  { day: "Friday", names: ["Ayasha", "Elizabeth", "Bahar", "Eliza", "Diamond"] },
   { day: "Saturday", names: ["Eliza", "Kim", "Ayasha"] },
   { day: "Sunday", names: ["Diamond", "Elizabeth", "Ayasha", "Bella"] },
 ];
