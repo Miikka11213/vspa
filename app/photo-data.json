@@ -104,5 +104,11 @@
       "src": "/images/team/bahar-persian.jpg",
       "alt": "Bahar standing beside floral artwork"
     }
+  ],
+  "team-sabrina": [
+    {
+      "src": "/images/team/sabrina-portrait.jpg",
+      "alt": "Sabrina at V Spa"
+    }
   ]
 }
