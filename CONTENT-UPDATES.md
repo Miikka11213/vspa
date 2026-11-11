@@ -24,7 +24,7 @@ Current weekly roster (October 20, 2026):
 
 October 9 website revision: the owner confirmed general grooming is offered for back, chest/torso, arms, legs and full body. General grooming uses “Price confirmed when booking” because its starting price is unconfirmed. Non-package estimates show a known subtotal excluding that unpriced add-on; the booking email says the same. Spoil Me still includes either body grooming or facial for $349, with no separate finishing charge. The services page, guide articles, metadata, footer links and 301 redirects follow the owner’s VSPA Google Ads Website Compliance Revision v1.0 brief. Website edits do not certify or guarantee Google Ads approval.
 
-October 13 search metadata update: all nine main pages now have individual meta descriptions. The shared layout includes HealthAndBeautyBusiness JSON-LD with the published business name, address, telephone and daily 10 AM–9 PM hours. Google Ads/GA4 tracking is still pending a verified Google tag ID and account setup; these search metadata changes do not activate advertising or tracking.
+October 13 search metadata update: all nine main pages now have individual meta descriptions. The shared layout includes HealthAndBeautyBusiness JSON-LD with the published business name, address, telephone and daily 10 AM–9 PM hours. This metadata update did not itself activate advertising or tracking; see the later Google Ads notes below.
 
 Individual session prices are room fees, paid to the front desk at check-in. Labels and payment notes use small text. The 60-minute single session keeps Twilight Symphony with the subtitle "60 Mins Private Suite Experience". All service prices, booking quotes and appointment emails use the October 10 room fees; Spoil Me remains $349 for 2.5 hours.
 
@@ -37,3 +37,5 @@ October 19 Bahar photo update: added the owner-provided photo unchanged at publi
 October 19 Mona departure: removed Mona from the team page, homepage team list and photo manager. She was already absent from the weekly roster. Her gallery entry and public portrait were removed; a local archive copy is preserved outside the website checkout.
 
 November 2 Monday roster update: added Eliza alongside Ayasha, Bahar and Kim. Other days follow the existing roster in app/site-data.js.
+
+November 11 Google Ads website calls: added the owner-provided website call conversion to the existing Google tag. The site uses 647-857-1226 as the fallback and updates click-to-call links when Google supplies a forwarding number. Appointment request tracking remains separate. A qualifying ad-driven call must still be verified in Google Ads.

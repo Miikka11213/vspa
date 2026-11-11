@@ -3,7 +3,7 @@ import path from "node:path";
 import { PhotoProvider, LocalPhotoLink } from "./photos";
 import "./globals.css";
 import { Header, Banner } from "./ui";
-import { GoogleAdsTag } from "./google-ads-tag";
+import { GoogleAdsTag, PhoneLink } from "./google-ads-tag";
 import { business, footerGuideLinks } from "./site-data";
 const businessSchema = {
   "@context": "https://schema.org",
@@ -83,7 +83,7 @@ export default async function RootLayout({ children }) {
               </div>
               <div>
                 <h2>Stay in touch</h2>
-                <a href={"tel:" + business.tel}>{business.phone}</a>
+                <PhoneLink />
                 <a href={"mailto:" + business.email}>{business.email}</a>
                 <p>{business.hours}</p>
               </div>

@@ -1,4 +1,5 @@
 import { PageStructuredData } from "./structured-data";
+import { PhoneLink } from "./google-ads-tag";
 import { guideSeo } from "./seo-metadata";
 import { addonPriceLabel } from "./booking-menu";
 import { treatmentCategories } from "./treatment-categories";
@@ -426,7 +427,7 @@ export function ServiceDetail({ service: s }) {
             <a href="/schedule">appointment request form</a>. Your appointment is
             confirmed when our team replies. Walk-ins are welcome when available.
           </p>
-          <p><a href="/contact">View directions and contact information</a> or <a href={"tel:" + business.tel}>call {business.phone}</a> to check availability.</p>
+          <p><a href="/contact">View directions and contact information</a> or <PhoneLink prefix="call " /> to check availability.</p>
           <a className="text-link" href="/services">
             ← Back to all services
           </a>
@@ -441,9 +442,7 @@ export function ServiceDetail({ service: s }) {
           <a className="button full" href="/schedule">
             Check availability ↗
           </a>
-          <a className="button secondary full" href={"tel:" + business.tel}>
-            Call {business.phone}
-          </a>
+          <PhoneLink className="button secondary full" prefix="Call " />
         </aside>
       </section>
       <CTA />
@@ -613,7 +612,7 @@ export function Contact() {
         <div className="contact-card">
           <span className="eyebrow">Talk to our team</span>
           <h2>
-            <a href={"tel:" + business.tel}>{business.phone}</a>
+            <PhoneLink />
           </h2>
           <p>Call or text for appointments and questions.</p>
           <a className="text-link" href={"mailto:" + business.email}>

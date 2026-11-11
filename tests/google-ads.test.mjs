@@ -13,7 +13,9 @@ test("Google Ads queues initialization once and counts only a successful unique 
   try {
     tracking.initializeGoogleAds();
     tracking.initializeGoogleAds();
-    assert.equal(window.dataLayer.filter(args => args[0] === "config").length, 1);
+    const configs = window.dataLayer.filter(args => args[0] === "config");
+    assert.deepEqual(configs.map(args => args[1]), ["AW-17660567185", "AW-17660567185/C4ZxCOWOs7YdEJG9m-VB"]);
+    assert.equal(configs[1][2].phone_conversion_number, "647-857-1226");
     assert.equal(window.dataLayer.filter(args => args[0] === "event").length, 0);
     const id = "d0f3c07b-b50a-40b6-bc77-2079ec05a55a";
     assert.equal(tracking.trackAppointmentRequest({ success: false }, id), false);
@@ -29,6 +31,23 @@ test("Google Ads queues initialization once and counts only a successful unique 
     });
     window.gtag = () => { throw new Error("Blocked tag"); };
     assert.doesNotThrow(() => tracking.trackAppointmentRequest({ success: true }, "a0f3c07b-b50a-40b6-bc77-2079ec05a55a"));
+  } finally { delete globalThis.window; }
+});
+
+test("A forwarding number updates the displayed phone and click-to-call destination", async () => {
+  const tracking = await trackingModule("phone");
+  globalThis.window = { location: { hostname: "vspa.ca", pathname: "/contact" } };
+  try {
+    assert.deepEqual(tracking.getPhoneNumber(), { phone: "647-857-1226", tel: "+16478571226" });
+    tracking.initializeGoogleAds();
+    const [, , { phone_conversion_callback: forward }] = window.dataLayer.find(args => args[1] === "AW-17660567185/C4ZxCOWOs7YdEJG9m-VB");
+    const updates = [];
+    const unsubscribe = tracking.subscribeToPhoneNumber(() => updates.push(tracking.getPhoneNumber()));
+    forward("", "invalid");
+    assert.equal(updates.length, 0);
+    forward("416-555-0100", "+14165550100");
+    assert.deepEqual(updates, [{ phone: "416-555-0100", tel: "+14165550100" }]);
+    unsubscribe();
   } finally { delete globalThis.window; }
 });
 
