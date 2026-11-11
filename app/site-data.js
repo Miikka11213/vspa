@@ -210,6 +210,7 @@ export const team = [
 export const guides = [
   {
     slug: "choosing-massage-toronto",
+    relatedTreatment: ["/services#body-rituals", "Compare 30-, 45- and 60-minute oil massages"],
     title: "Find your ideal massage",
     summary: "A little guidance on time, pressure, and your first visit.",
     sections: [
@@ -229,6 +230,7 @@ export const guides = [
   },
   {
     slug: "massage-addons-toronto",
+    relatedTreatment: ["/services#add-ons", "View body scrubs, facials and grooming add-ons"],
     title: "The finishing touches",
     summary: "Explore body scrubs, facials, and personal grooming.",
     sections: [
@@ -248,6 +250,7 @@ export const guides = [
   },
   {
     slug: "midtown-toronto-massage-spa-guide",
+    relatedTreatment: ["/services#four-hand", "Explore four-hand hot stone and oil massages"],
     title: "Your Midtown spa visit",
     summary: "Directions, appointment planning, and what to expect.",
     sections: [
@@ -267,6 +270,7 @@ export const guides = [
   },
   {
     slug: "evening-massage-toronto-after-work",
+    relatedTreatment: ["/schedule", "Request an evening massage appointment"],
     title: "Make space after work",
     summary: "Plan a quiet pause at the end of your day.",
     sections: [
@@ -286,6 +290,7 @@ export const guides = [
   },
   {
     slug: "private-spa-rooms-toronto-gta",
+    relatedTreatment: ["/experience", "See what to expect in our private massage suites"],
     title: "A little room to unwind",
     summary: "A comfortable, private setting for your spa appointment.",
     sections: [

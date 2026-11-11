@@ -44,7 +44,7 @@ export function CategoryCards() {
         {category.options.map(option => <li key={option.slug}><span>{option.duration}{option.isPackage ? " · per person" : ""}</span><span className="category-rate-price">{option.isRoomFee && <small>Room Fee:</small>}<strong>${option.price}</strong></span></li>)}
       </ul>
       {category.options[0]?.paymentNote && <p className="payment-note">{category.options[0].paymentNote}</p>}
-      <div className="card-bottom"><a href={"/services#" + category.id}>Explore this category <span aria-hidden="true">↗</span></a></div>
+      <div className="card-bottom"><a href={"/services#" + category.id}>View {category.title} <span aria-hidden="true">↗</span></a></div>
     </article>)}
   </div>;
 }
@@ -316,7 +316,7 @@ export function Services() {
       <a className="button secondary" href="/schedule">Check availability</a>
     </div>
     <section className="container section compact">
-      <SectionTitle eyebrow="Plan your visit" title="How to book an appointment" text="Choose the service, add any skincare or body-grooming options, then confirm the appointment directly with our team." />
+      <SectionTitle eyebrow="Plan your visit" title="How to book an appointment" text="Choose the service, add any skincare or body-grooming options, then confirm the appointment directly with our team." link="/pricing" label="Compare massage room fees and package prices" />
       <div className="booking-steps">
         {[
           ["01", "Choose the right amount of time", "Select a 30, 45, or 60 minute massage depending on how much time you want to relax and unwind."],
@@ -334,7 +334,7 @@ export function Services() {
       <ServiceCards items={category.options} />
       <p className="note">{category.id === "spoil-me" ? "$349 per person for a 2.5-hour visit. Your selected package treatments are included." : category.id === "four-hand" ? "Two therapists treating one guest. Choose 30, 45 or 60 minutes." : "Choose 30, 45 or 60 minutes of botanical oil care."}</p>
     </section>)}
-    <section className="container section"><SectionTitle eyebrow="Finishing touches" title="Additional Services" text="Add body care or skincare to an individual massage. The Spoil Me package already includes its selected treatments." /><Addons /></section>
+    <section id="add-ons" className="container section"><SectionTitle eyebrow="Finishing touches" title="Additional Services" text="Add body care or skincare to an individual massage. The Spoil Me package already includes its selected treatments." /><Addons /></section>
     <FAQs /><CTA />
   </>;
 }
@@ -727,7 +727,7 @@ export function GuideDetail({ guide: g }) {
         ))}
         {!g.path && <section>
           <h2>Plan your visit to V Spa</h2>
-          <p>Visit us at {business.address}, {business.city}, for relaxation massage, skincare and body grooming. <a href="/services">Explore our current services</a>, then <a href="/contact">check directions and contact the spa</a> to plan your appointment.</p>
+          <p>Visit us at {business.address}, {business.city}. {g.relatedTreatment && <><a href={g.relatedTreatment[0]}>{g.relatedTreatment[1]}</a> or </>}<a href="/contact">get directions and contact the spa</a> to plan your visit.</p>
         </section>}
         <a className="text-link" href="/guides">
           ← All guides

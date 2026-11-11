@@ -1,9 +1,9 @@
 // Search wording is separate from the visible treatment names and card headings.
 export const pageSeoTitles = {
-  "services": "Private Massage & Spa Services on Eglinton West",
-  "pricing": "Massage Room Fees & Spa Package Prices",
+  "services": "Massage & Spa Services in Midtown Toronto",
+  "pricing": "Massage & Spa Pricing in Midtown Toronto",
   "attendants": "Massage Attendants in Midtown Toronto",
-  "schedule": "Book a Massage in Toronto",
+  "schedule": "Request a Massage Appointment in Midtown Toronto",
   "experience": "Private Massage Suites in Midtown Toronto",
   "contact": "Contact Our Midtown Toronto Massage Spa",
   "about": "About Our Midtown Toronto Massage Spa",
